@@ -332,6 +332,7 @@ button {
 }
 
 .text-bg a,#submit-button {
+     border-radius: 10px;
      font-size: 17px;
      background-color: #fff;
      color: #ff283f;
@@ -345,7 +346,7 @@ button {
      text-transform: uppercase;
 }
 
-.text-bg a,#submit-button:hover {
+.text-bg a:hover,#submit-button:hover {
      background-color: #ff283f;
      color: #fff;
      transition: ease-in all 0.5s;
@@ -501,6 +502,14 @@ button {
 .work {
      background: #fff;
      padding-top: 90px;
+}
+
+.work_link,.work_link h3{
+     color: #e70139;
+}
+.work_link:hover,.work_link h3:hover{
+     transition: ease-in all 0.2s;
+     color: black;
 }
 
 .our_work {
