@@ -283,9 +283,62 @@ button {
 }
 
 /** banner section **/
+#cylinder1{
+     top:-400px;
+     left:500px;
+     position: fixed;
+     background-color:#430919;
+}
+#cylinder2{
+     top:0px;
+     left:400px;
+     position: fixed;
+     background-color:#430919;
+}
+#cylinder3{
+     top:-600px;
+     left:1000px;
+     position: fixed;
+     background-color:#6F0720;
+}
+.cylinder {
+     
+     width: 70px; /* Adjust width */
+     height: 600px; /* Adjust height */
+     background-color: #007bff; /* Adjust color */
+     border-radius: 35px;
+     
+     transform: rotate(45deg);
+     animation: move 60s linear infinite, fade-in-out 60s linear infinite;;
+   }
+   @keyframes move {
+     0%{
+          transform: translate(0,0) rotate(45deg);
+     }
+     100%{
+          transform: translate(-50vw,50vh) rotate(45deg);
+     }
+   }
+
+   @keyframes fade-in-out {
+     0% {
+       opacity: 0; /* Start with opacity 0 for fade-in */
+     }
+     5% {
+       opacity: 1; /* Quickly fade in */
+     }
+     95% {
+       opacity: 1; /* Keep opacity at 1 for most of the animation */
+     }
+     100% {
+       opacity: 0; /* Fade out at the end */
+     }
+   }
+
 
 .banner_main {
-     background: url(../images/banner.jpg);
+     /*background: url(../images/banner.jpg);*/
+     background: black;
      display: flex;
      align-content: center;
      align-items: center;
@@ -312,10 +365,35 @@ button {
 
 .bann_img figure {
      margin: 0;
+     transition: transform 0.5s ease; /* Smooth transition effect */
 }
 
+
 .bann_img figure img {
-     width: 100%;
+     width: 100%; 
+}
+
+.triangle {
+     width:100%;
+     position: absolute;
+     top: -13%;
+     left: -2%;
+     transform: translate(-50%, -50%);
+     z-index: 1; /* Adjust the z-index to position the image on top */
+     animation: spin 60s linear infinite; /* Adjust duration of spin animation */
+   }
+
+   @keyframes spin {
+     from {
+       transform: rotate(0deg);
+     }
+     to {
+       transform: rotate(360deg);
+     }
+   }
+
+   .triangle:hover ~ figure {
+     transform: scale(1.03); /* Zoom effect on hover */
 }
 
 .text-bg h1 {
@@ -542,7 +620,8 @@ button {
 
 .footer {
      padding-bottom: 60px;
-     background: url(../images/banner.jpg);
+     /*background: url(../images/banner.jpg);*/
+     background-color: black;
      padding-top: 90px;
      text-align: center;
 
