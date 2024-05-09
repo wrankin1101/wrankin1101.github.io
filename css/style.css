@@ -211,7 +211,14 @@ button {
      margin: 0;
      padding: 0;
 }
-
+.spacer {
+     border: none;
+  height: 2px; /* Customize height as needed */
+  background-color: grey; /* Customize color as needed */
+  margin: 60px; /* Adjust margin as needed */
+  position: relative;
+  z-index: 1;
+}
 
 /**-- heading section --**/
 
@@ -344,7 +351,6 @@ button {
      align-items: center;
      background-size: 100% 100%;
      padding-top: 13%;
-     padding-bottom: 150px;
 
      background-attachment: fixed;
      background-position: center;
@@ -446,7 +452,7 @@ button {
 .titlepage h3 {
      text-align: left;
      font-size: 45px;
-     color: #060002;
+     color: white;
      line-height: 55px;
      font-weight: 800;
      padding: 0;
@@ -578,8 +584,11 @@ button {
 /** work section **/
 
 .work {
-     background: #fff;
+     background: black;
      padding-top: 90px;
+}
+.work h2{
+     color: #b3b3b3;
 }
 
 .work_link,.work_link h3{
@@ -599,17 +608,15 @@ button {
 }
 
 .our_work figure img {
+     transition: ease-in all 0.2s;
      width: 100%;
-     border: black 0px solid;
      border-radius: 10px;
      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Apply a box-shadow to create a shadow effect */
 }
 
 .our_work figure img:hover {
-     transition: ease-in all 0.2s;
-     border: black 2px solid;
      
-     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5); /* Apply a box-shadow to create a shadow effect */
+     transform: scale(.97);
 }
 
 
@@ -644,11 +651,10 @@ button {
 }
 
 
-.multipurpose p {
-     color: #fff;
+.multipurpose p, .work p {
+     color: whitesmoke;
      font-size: 17px;
      line-height: 30px;
-     padding-top: 40px;
      font-weight: 400;
 }
 
