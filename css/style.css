@@ -290,6 +290,27 @@ button {
 }
 
 /** banner section **/
+#back-to-top{
+     position: fixed;
+     bottom:0;
+     right:0;
+     background: darkslategray;
+     border-radius: 100%;
+     box-shadow: 3px 3px 5px darkslategray;
+     height: 5vw;
+     width: 5vw;
+     margin: 20px;
+     cursor: pointer;
+     transition: transform 0.5s ease; /* Smooth transition effect */
+}
+#back-to-top img{
+     width: 60%; /*centering hack*/
+     margin: 20%;
+     transition: transform 0.5s ease; /* Smooth transition effect */
+}
+#back-to-top:hover{
+     transform:translate(2px,2px);
+}
 #cylinder1{
      top:-400px;
      left:500px;
@@ -341,7 +362,22 @@ button {
        opacity: 0; /* Fade out at the end */
      }
    }
+.typeletter {
+     animation: typeSimulate .3s linear forwards;
+     display: inline;
 
+}
+@keyframes typeSimulate {
+     0% {
+          background-color: white; /* Start with opacity 0 for fade-in */
+     }
+     80% {
+          background-color: white; /* Start with opacity 0 for fade-in */
+     }
+     100% {
+       background-color: none;
+     }
+}
 
 .banner_main {
      /*background: url(../images/banner.jpg);*/
@@ -415,7 +451,7 @@ button {
      cursor: pointer;
 }
 
-.text-bg a,#submit-button {
+.big-button {
      border-radius: 10px;
      font-size: 17px;
      background-color: #fff;
@@ -430,7 +466,7 @@ button {
      text-transform: uppercase;
 }
 
-.text-bg a:hover,#submit-button:hover {
+.big-button:hover {
      background-color: #ff283f;
      color: #fff;
      transition: ease-in all 0.5s;
