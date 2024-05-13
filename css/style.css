@@ -302,6 +302,7 @@ button {
      margin: 20px;
      cursor: pointer;
      transition: transform 0.5s ease; /* Smooth transition effect */
+     z-index: 1;
 }
 #back-to-top img{
      width: 60%; /*centering hack*/
@@ -442,7 +443,7 @@ button {
      color: #fff;
      font-size: 78px;
      line-height: 96px;
-     padding-bottom: 59px;
+     padding-bottom: 50px;
      font-weight: 800;
      padding-top: 40px;
 }
@@ -629,10 +630,11 @@ button {
 
 .work_link,.work_link h3{
      color: #e70139;
+     transition: ease-in all 0.2s;
 }
 .work_link:hover,.work_link h3:hover{
-     transition: ease-in all 0.2s;
-     color: black;
+     color: whitesmoke;
+     text-decoration: underline !important;
 }
 
 .our_work {

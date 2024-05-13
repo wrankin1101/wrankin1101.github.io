@@ -14,14 +14,14 @@ $(function () {
 	}, 1500);
 	
 	
-	/* Type it out
+	/* Tooltip
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 	$(document).ready(function(){
 		$('[data-toggle="tooltip"]').tooltip();
 	});
 
 
-	/* Tooltip
+	/*  Type it out
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 	
 	$(document).ready(function(){
@@ -31,14 +31,48 @@ $(function () {
 		$('.typeIt').each(async function(index, elem) {
 			var string = $(this).text().trim();
 			$(this).html('');
-			console.log(string);
-			for (var i = 0; i < string.length; i++){
-				$(this).append("<div class='typeletter'>"+string[i]+"</div>");
-				await new Promise(resolve => setTimeout(resolve, 80));
+			await typeStringtoDiv($(this),string);
+		})
+		$('.typeItLoop').each(async function(index, elem) {
+			var strings = $(this).text().split(',');
+			$(this).html('');
+			let i = 0;
+			while (1){
+				await typeStringtoDiv($(this),strings[i].trim());
+				await blinkCursor($(this),3);
+				await deleteStringfromDiv($(this));
+				i++;
+				if (i >= strings.length){
+					i = 0;
+				}
 			}
 
 		})
-		
+	}
+	async function typeStringtoDiv($div,string){
+		for (var i = 0; i < string.length; i++){
+			$div.append("<div class='typeletter'>"+string[i]+"</div>");
+			await new Promise(resolve => setTimeout(resolve, 80));
+		}
+	}
+	async function deleteStringfromDiv($div){
+		let $cursor = $("<div class='typeletter'>&nbsp;&nbsp;</div>");
+		let children = $div.children('.typeletter');
+		for (let i = children.length-1; i > -1; i--){
+			$cursor.remove();
+			children[i].remove();
+			$div.append($cursor);
+			await new Promise(resolve => setTimeout(resolve, 80));
+		}
+		$cursor.remove();
+	}
+	async function blinkCursor($div,times){
+		let $cursor = $("<div class='typeletter'>&nbsp;&nbsp;</div>");
+		for (let i = 0; i < times; i++){
+			$div.append($cursor);
+			await new Promise(resolve => setTimeout(resolve, 1000));
+			$cursor.remove();
+		}
 	}
 	
 	
