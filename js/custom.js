@@ -34,43 +34,41 @@ $(function () {
 			await typeStringtoDiv($(this),string);
 		})
 		$('.typeItLoop').each(async function(index, elem) {
-			var strings = $(this).text().split(',');
+			var strings = $(this).text().trim().split(',');
 			$(this).html('');
-			let i = 0;
 			while (1){
-				await typeStringtoDiv($(this),strings[i].trim());
-				await blinkCursor($(this),3);
-				await deleteStringfromDiv($(this));
-				i++;
-				if (i >= strings.length){
-					i = 0;
+				for (let i = 0; i < strings.length; i++){
+					let comma = (i == strings.length - 1) ? "" : ", ";
+					await typeStringtoDiv($(this),strings[i].trim()+comma,80);
+					await blinkCursor($(this),3,1000);
 				}
+				await deleteStringfromDiv($(this),60);
 			}
 
 		})
 	}
-	async function typeStringtoDiv($div,string){
+	async function typeStringtoDiv($div,string,msDelay){
 		for (var i = 0; i < string.length; i++){
 			$div.append("<div class='typeletter'>"+string[i]+"</div>");
-			await new Promise(resolve => setTimeout(resolve, 80));
+			await new Promise(resolve => setTimeout(resolve, msDelay));
 		}
 	}
-	async function deleteStringfromDiv($div){
+	async function deleteStringfromDiv($div,msDelay){
 		let $cursor = $("<div class='typeletter'>&nbsp;&nbsp;</div>");
 		let children = $div.children('.typeletter');
 		for (let i = children.length-1; i > -1; i--){
 			$cursor.remove();
 			children[i].remove();
 			$div.append($cursor);
-			await new Promise(resolve => setTimeout(resolve, 80));
+			await new Promise(resolve => setTimeout(resolve, msDelay));
 		}
 		$cursor.remove();
 	}
-	async function blinkCursor($div,times){
+	async function blinkCursor($div,times,msDelay){
 		let $cursor = $("<div class='typeletter'>&nbsp;&nbsp;</div>");
 		for (let i = 0; i < times; i++){
 			$div.append($cursor);
-			await new Promise(resolve => setTimeout(resolve, 1000));
+			await new Promise(resolve => setTimeout(resolve, msDelay));
 			$cursor.remove();
 		}
 	}

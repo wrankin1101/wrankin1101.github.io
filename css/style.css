@@ -453,7 +453,7 @@ button {
 }
 
 .big-button {
-     border-radius: 10px;
+     border-radius: .5rem;
      font-size: 17px;
      background-color: #fff;
      color: #ff283f;
@@ -648,7 +648,7 @@ button {
 .our_work figure img {
      transition: ease-in all 0.2s;
      width: 100%;
-     border-radius: 10px;
+     border-radius: .5rem;
      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Apply a box-shadow to create a shadow effect */
 }
 
@@ -704,6 +704,7 @@ button {
      background: #fff;
      padding: 31px;
      text-align: left;
+     border-radius: .5rem;
 }
 
 .contac_detel ul li img {
