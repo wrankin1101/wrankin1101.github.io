@@ -302,7 +302,7 @@ button {
      margin: 20px;
      cursor: pointer;
      transition: transform 0.5s ease; /* Smooth transition effect */
-     z-index: 1;
+     z-index: 2;
 }
 #back-to-top img{
      width: 60%; /*centering hack*/
@@ -403,7 +403,7 @@ button {
 }
 
 .bann_img {
-     padding-right: 40px;
+     position: relative;
 }
 
 .bann_img figure {
@@ -417,11 +417,10 @@ button {
 }
 
 .triangle {
-     width:100%;
+     width:45%;
      position: absolute;
-     top: -13%;
-     left: -2%;
-     transform: translate(-50%, -50%);
+     top: -7%;
+     left: 27%;
      z-index: 1; /* Adjust the z-index to position the image on top */
      animation: spin 60s linear infinite; /* Adjust duration of spin animation */
    }
@@ -435,7 +434,7 @@ button {
      }
    }
 
-   .triangle:hover ~ figure {
+   .bann_img:hover figure {
      transform: scale(1.03); /* Zoom effect on hover */
 }
 
