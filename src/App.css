@@ -334,7 +334,7 @@ button {
      0% {
        opacity: 0; /* Start with opacity 0 for fade-in */
      }
-     5% {
+     3% {
        opacity: 1; /* Quickly fade in */
      }
      95% {
@@ -345,16 +345,20 @@ button {
      }
    }
 .typeletter {
-     animation: typeSimulate .3s linear forwards;
-     display: inline;
-
+  animation: typeSimulate .3s linear forwards;
+  display: inline;
 }
+.typecursor {
+  animation: typeSimulate 1s infinite;
+  display: inline;
+}
+
 @keyframes typeSimulate {
      0% {
-          background-color: white; /* Start with opacity 0 for fade-in */
+          background-color: white; 
      }
-     80% {
-          background-color: white; /* Start with opacity 0 for fade-in */
+     70% {
+          background-color: white; 
      }
      100% {
        background-color: none;

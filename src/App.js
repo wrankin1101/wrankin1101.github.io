@@ -123,7 +123,7 @@ function App() {
                       minHeight: "110px",
                     }}
                   >
-                    Full-Stack Developer, Teacher, Explorer
+                    {useTypingEffect("Full-Stack Developer, Teacher, Explorer",80)}
                   </h2>
                   <div class="multipurpose">
                     <p>
@@ -590,24 +590,44 @@ function App() {
   );
 }
 
-const useTypingEffect = (text, delay = 100) => {
+const useTypingEffect = (text, delay = 100, commaPause = 3000) => {
   const [typedText, setTypedText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const typingInterval = setInterval(() => {
-      if (currentIndex < text.length) {
-        setTypedText((prevText) => prevText + text[currentIndex]);
-        setCurrentIndex((prevIndex) => prevIndex + 1);
-      } else {
-        clearInterval(typingInterval);
-      }
-    }, delay);
+    let isCancelled = false; // To handle cleanup
 
-    return () => clearInterval(typingInterval);
-  }, [currentIndex, text, delay]);
+    const typeCharacter = async () => {
+
+      for (let i = 0; i < text.length; i++) {
+        if (isCancelled ) return;
+
+        setTypedText(prev => prev + text[i]);
+
+        if (text[i] === ','){
+          await blinkCursor(commaPause)
+        }
+        await new Promise(resolve => setTimeout(resolve, delay));
+      }
+    };
+    async function blinkCursor(msDelay){
+      setTypedText(prev => prev + '_');
+      await new Promise(resolve => setTimeout(resolve, msDelay));
+      setTypedText(prev => prev.substring(0,prev.length-1));
+    }
+
+    typeCharacter(); // Start the typing effect
+
+    return () => {
+      isCancelled = true; // Cleanup to cancel typing effect if component unmounts
+    };
+  }, [commaPause, delay, text]);
 
   return typedText.split("").map((char, index) => (
+    char === '_' ?
+    <div key={index} class="typecursor">
+      &nbsp;&nbsp;
+    </div> 
+    :
     <div key={index} class="typeletter">
       {char}
     </div>
