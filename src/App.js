@@ -49,7 +49,7 @@ function App() {
         <div class="header">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+              <div class="col-3 col logo_section">
                 <div class="full">
                   <div class="center-desk">
                     <div class="logo">
@@ -60,7 +60,7 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+              <div class="col-9">
                 <nav class="navigation navbar navbar-expand-md navbar-dark ">
                   <button
                     class="navbar-toggler"
@@ -71,7 +71,11 @@ function App() {
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                   >
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon">
+                      <div class="hamburger"></div>
+                      <div class="hamburger"></div>
+                      <div class="hamburger"></div>
+                    </span>
                   </button>
                   <div class="collapse navbar-collapse" id="navbarsExample04">
                     <ul class="navbar-nav mr-auto">
