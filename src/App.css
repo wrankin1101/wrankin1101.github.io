@@ -201,6 +201,15 @@ button {
   z-index: 1;
 }
 
+.fade-in-element {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  will-change: opacity; /* Optimization hint for the browser */
+}
+.fade-in-element.visible {
+  opacity: 1;
+}
+
 /**-- heading section --**/
 
 
@@ -271,6 +280,23 @@ button {
 }
 
 /** banner section **/
+.logo img{
+  transition: transform 0.5s ease; /* Smooth transition effect */
+}
+.logo img:hover{
+  transform:translate(2px,2px);
+}
+.socials svg{
+  width:30px;
+  height:30px;
+  color:white;
+  transition: all 0.5s ease; /* Smooth transition effect */
+}
+.socials svg:hover{
+  color:#e70139;
+  transform: scale(1.1);
+}
+
 #back-to-top{
      position: fixed;
      bottom:0;
@@ -282,7 +308,7 @@ button {
      width: 50px;
      margin: 20px;
      cursor: pointer;
-     transition: transform 0.5s ease; /* Smooth transition effect */
+     transition: all 0.5s ease; /* Smooth transition effect */
      z-index: 2;
 }
 #back-to-top img{
@@ -357,7 +383,7 @@ button {
      0% {
           background-color: white; 
      }
-     70% {
+     50% {
           background-color: white; 
      }
      100% {
@@ -438,7 +464,7 @@ button {
 
 .big-button {
      border-radius: .5rem;
-     font-size: 17px;
+     font-size: 20px;
      background-color: #fff;
      color: #ff283f;
      font-weight: 600;
@@ -447,14 +473,18 @@ button {
      max-width: 320px;
      text-align: center;
      display: inline-block;
-     transition: ease-in all 0.5s;
+     transition: ease all 0.5s;
      text-transform: uppercase;
+}
+.big-button svg{
+  width:24px;
+  height:24px;
+  vertical-align: text-bottom;
 }
 
 .big-button:hover {
      background-color: #ff283f;
      color: #fff;
-     transition: ease-in all 0.5s;
      cursor:pointer;
 }
 

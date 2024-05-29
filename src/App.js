@@ -101,11 +101,9 @@ function App() {
         <div id="cylinder1" class="cylinder"></div>
         <div id="cylinder2" class="cylinder"></div>
         <div id="cylinder3" class="cylinder"></div>
-        {backToTop && (
-          <div id="back-to-top" onClick={scrollToTop}>
+          <div id="back-to-top" className={`fade-in-element ${backToTop ? 'visible' : ''}`} onClick={scrollToTop}>
             <img alt="back to top" src={triangle} />
           </div>
-        )}
         <div class="container-fluid">
           <div class="row d_flex">
             <div class="col-md-7">
@@ -139,27 +137,23 @@ function App() {
                   </div>
 
                   <br />
-                  <div class="col-3" style={{ display: "none" }}>
-                    <svg
-                      viewBox="0 0 24 24"
-                      width="24"
-                      height="24"
-                      aria-hidden="true"
-                      fill="#ffffff"
-                    >
-                      <path
-                        stroke="currentColor"
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M12 2C6.475 2 2 6.588 2 12.253c0 4.537 2.862 8.369 6.838 9.727.5.09.687-.218.687-.487 0-.243-.013-1.05-.013-1.91C7 20.059 6.35 18.957 6.15 18.38c-.113-.295-.6-1.205-1.025-1.448-.35-.192-.85-.667-.013-.68.788-.012 1.35.744 1.538 1.051.9 1.551 2.338 1.116 2.912.846.088-.666.35-1.115.638-1.371-2.225-.256-4.55-1.14-4.55-5.062 0-1.115.387-2.038 1.025-2.756-.1-.256-.45-1.307.1-2.717 0 0 .837-.269 2.75 1.051.8-.23 1.65-.346 2.5-.346.85 0 1.7.115 2.5.346 1.912-1.333 2.75-1.05 2.75-1.05.55 1.409.2 2.46.1 2.716.637.718 1.025 1.628 1.025 2.756 0 3.934-2.337 4.806-4.562 5.062.362.32.675.936.675 1.897 0 1.371-.013 2.473-.013 2.82 0 .268.188.589.688.486a10.039 10.039 0 0 0 4.932-3.74A10.447 10.447 0 0 0 22 12.253C22 6.588 17.525 2 12 2Z"
-                      ></path>
-                    </svg>
+                  <div class="socials row p-2 mb-4">
+                  <div class="col-1">
+                  <a href="https://github.com/wrankin1101" target="_blank" rel="noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="none">
+    <path d="M10 20.5675C6.57143 21.7248 3.71429 20.5675 2 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M10 22V18.7579C10 18.1596 10.1839 17.6396 10.4804 17.1699C10.6838 16.8476 10.5445 16.3904 10.1771 16.2894C7.13394 15.4528 5 14.1077 5 9.64606C5 8.48611 5.38005 7.39556 6.04811 6.4464C6.21437 6.21018 6.29749 6.09208 6.31748 5.9851C6.33746 5.87813 6.30272 5.73852 6.23322 5.45932C5.95038 4.32292 5.96871 3.11619 6.39322 2.02823C6.39322 2.02823 7.27042 1.74242 9.26698 2.98969C9.72282 3.27447 9.95075 3.41686 10.1515 3.44871C10.3522 3.48056 10.6206 3.41384 11.1573 3.28041C11.8913 3.09795 12.6476 3 13.5 3C14.3524 3 15.1087 3.09795 15.8427 3.28041C16.3794 3.41384 16.6478 3.48056 16.8485 3.44871C17.0493 3.41686 17.2772 3.27447 17.733 2.98969C19.7296 1.74242 20.6068 2.02823 20.6068 2.02823C21.0313 3.11619 21.0496 4.32292 20.7668 5.45932C20.6973 5.73852 20.6625 5.87813 20.6825 5.9851C20.7025 6.09207 20.7856 6.21019 20.9519 6.4464C21.6199 7.39556 22 8.48611 22 9.64606C22 14.1077 19.8661 15.4528 16.8229 16.2894C16.4555 16.3904 16.3162 16.8476 16.5196 17.1699C16.8161 17.6396 17 18.1596 17 18.7579V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+</a>
+                  </div>
+                  <div class="col-1">
+                  <a href="https://www.linkedin.com/in/will-rankn" target="_blank" rel="noreferrer">
+                  
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       width="24"
                       height="24"
-                      color="#ffffff"
                       fill="none"
                     >
                       <path
@@ -179,12 +173,15 @@ function App() {
                         stroke-linejoin="round"
                       />
                     </svg>
+                    </a>
+                  </div>
+                  <div class="col-1">
+                  <a href="mailto:wrankin1101@gmail.com" target="_blank" rel="noreferrer">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       width="24"
                       height="24"
-                      color="#ffffff"
                       fill="none"
                     >
                       <path
@@ -200,6 +197,8 @@ function App() {
                         stroke-linejoin="round"
                       />
                     </svg>
+                 </a>
+                  </div>
                   </div>
                   <a
                     target="_blank"
@@ -207,8 +206,14 @@ function App() {
                     href="https://drive.google.com/file/d/155HY4my4mZl1IAD_-V7XuTdNIjqKEVki/view?usp=sharing"
                     rel="noreferrer"
                   >
-                    <i class="fas fa-file-pdf fa-sm"></i>
-                    &nbsp; Resume
+                    
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="none">
+    <path d="M7 18V15.5M7 15.5V14C7 13.5286 7 13.2929 7.15377 13.1464C7.30754 13 7.55503 13 8.05 13H8.75C9.47487 13 10.0625 13.5596 10.0625 14.25C10.0625 14.9404 9.47487 15.5 8.75 15.5H7ZM21 13H19.6875C18.8625 13 18.4501 13 18.1938 13.2441C17.9375 13.4882 17.9375 13.881 17.9375 14.6667V15.5M17.9375 18V15.5M17.9375 15.5H20.125M15.75 15.5C15.75 16.8807 14.5747 18 13.125 18C12.7979 18 12.6343 18 12.5125 17.933C12.2208 17.7726 12.25 17.448 12.25 17.1667V13.8333C12.25 13.552 12.2208 13.2274 12.5125 13.067C12.6343 13 12.7979 13 13.125 13C14.5747 13 15.75 14.1193 15.75 15.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M15 22H10.7273C7.46607 22 5.83546 22 4.70307 21.2022C4.37862 20.9736 4.09058 20.7025 3.8477 20.3971C3 19.3313 3 17.7966 3 14.7273V12.1818C3 9.21865 3 7.73706 3.46894 6.55375C4.22281 4.65142 5.81714 3.15088 7.83836 2.44135C9.09563 2 10.6698 2 13.8182 2C15.6173 2 16.5168 2 17.2352 2.2522C18.3902 2.65765 19.3012 3.5151 19.732 4.60214C20 5.27832 20 6.12494 20 7.81818V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M3 12C3 10.1591 4.49238 8.66667 6.33333 8.66667C6.99912 8.66667 7.78404 8.78333 8.43137 8.60988C9.00652 8.45576 9.45576 8.00652 9.60988 7.43136C9.78333 6.78404 9.66667 5.99912 9.66667 5.33333C9.66667 3.49238 11.1591 2 13 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+                      
+                      &nbsp;&nbsp;Resume
                   </a>
                 </div>
               </div>
@@ -490,21 +495,21 @@ function App() {
                       +82 010 2892 3398
                     </li>
                     <li>
-                      <a href="mailto:wrankin1101@gmail.com">
+                      <a href="mailto:wrankin1101@gmail.com" target="_blank" rel="noreferrer">
                         {" "}
                         <img src={mail} alt="#" />
                         wrankin1101@gmail.com
                       </a>
                     </li>
                     <li>
-                      <a href="https://www.linkedin.com/in/will-rankn">
+                      <a href="https://www.linkedin.com/in/will-rankn" target="_blank" rel="noreferrer">
                         {" "}
                         <img src={linkedIn} alt="#" />
                         linkedin.com/in/will-rankn
                       </a>
                     </li>
                     <li>
-                      <a href="https://github.com/wrankin1101">
+                      <a href="https://github.com/wrankin1101" target="_blank" rel="noreferrer">
                         {" "}
                         <img src={github} alt="#" />
                         github.com/wrankin1101
