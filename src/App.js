@@ -70,7 +70,7 @@ function App() {
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
+              <li class="nav-item">
               <a class="nav-link" href="#work">
                           My Work
                         </a>
@@ -101,14 +101,36 @@ function App() {
       {/*  banner  */}
       <section class="banner_main pt-5">
         <div class="container">
-          <div class="row d_flex">
-            <div class="col-md-7">
+          <div class="row d_flex align-items-start">
+            <div class="col-lg-7">
               <div class="text-bg">
                 <div
                   class="padding_lert titlepage"
                   style={{ textAlign: "left", padding: "10px" }}
                 >
                   <h1 class="typeIt">{useTypingEffect("Will Rankin", 80)}</h1>
+                  
+                </div>
+              </div>
+            </div>
+
+            <div class="bann-img-col col-lg-5 col-md-12">
+              <div class="bann-img m-5">
+                <div class="triangle">
+                  <img src={spinTriangle} alt="#" />
+                </div>
+                <figure>
+                  <img src={headshot} alt="#" />
+                </figure>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="text-bg">
+                <div
+                  class="padding_lert titlepage"
+                  style={{ textAlign: "left", padding: "10px" }}
+                >
                   <h2
                     class="typeItLoop"
                     style={{
@@ -264,16 +286,6 @@ function App() {
                     &nbsp;&nbsp;Resume
                   </a>
                 </div>
-              </div>
-            </div>
-            <div class="col-md-4 m-5">
-              <div class="bann_img">
-                <div class="triangle">
-                  <img src={spinTriangle} alt="#" />
-                </div>
-                <figure>
-                  <img src={headshot} alt="#" />
-                </figure>
               </div>
             </div>
           </div>

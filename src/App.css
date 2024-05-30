@@ -391,18 +391,21 @@ button {
        background-color: none;
      }
 }
-
-.bann_img {
+.bann-img-col{
+  height: 200px;
+}
+.bann-img {
      position: relative;
+     max-width: 360px;
 }
 
-.bann_img figure {
+.bann-img figure {
      margin: 0;
      transition: transform 0.5s ease; /* Smooth transition effect */
 }
 
 
-.bann_img figure img {
+.bann-img figure img {
      width: 100%;
      /*max-width: 370px; messes up the triangle if we do this */
 }
@@ -425,7 +428,7 @@ button {
      }
    }
 
-   .bann_img:hover figure {
+   .bann-img:hover figure {
      transform: scale(1.03); /* Zoom effect on hover */
 }
 
@@ -433,9 +436,7 @@ button {
      color: #fff;
      font-size: 78px;
      line-height: 96px;
-     padding-bottom: 50px;
      font-weight: 800;
-     padding-top: 40px;
 }
 
 .text-bg i img {
@@ -761,9 +762,6 @@ button {
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  .titlepage h2 {
-      font-size: 38px;
-  }
   .titlepage h3 {
       font-size: 38px;
   }
@@ -773,8 +771,11 @@ button {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+  .bann-img-col{
+    height: auto;
+  }
   .titlepage h2 {
-      font-size: 30px;
+      font-size: 38px;
       line-height: 41px;
   }
   .titlepage h3 {
@@ -797,17 +798,16 @@ button {
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  .text-bg h1 {
-      font-size: 57px;
-      line-height: 81px;
+  .bann-img-col{
+    height: auto;
   }
   .text-bg a,#submit-button {
-      margin-bottom: 30px;
       max-width: 250px;
   }
   .titlepage h2 {
-      font-size: 38px;
-  }
+    font-size: 30px;
+    line-height: 41px;
+}
   .titlepage h3 {
       font-size: 38px;
   }
@@ -836,26 +836,27 @@ button {
 }
 
 @media (max-width: 575px) {
+  .bann-img-col{
+    height: auto;
+  }
   .header {
       padding: 30px 0px;
   }
   .text-bg a,#submit-button {
-      margin-bottom: 30px;
       max-width: 250px;
   }
   .text-bg h1 {
-      font-size: 34px;
-      line-height: 53px;
-      padding-bottom: 40px;
-  }
+    font-size: 57px;
+    line-height: 81px;
+}
   .service .titlepage {
       padding-left: 0;
       padding-top: 40px;
   }
   .titlepage h2 {
-      font-size: 22px;
-      line-height: 37px;
-  }
+    font-size: 30px;
+    line-height: 41px;
+}
   .titlepage h3 {
       font-size: 22px;
       line-height: 37px;
