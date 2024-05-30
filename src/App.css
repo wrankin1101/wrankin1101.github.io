@@ -161,10 +161,6 @@ img {
      box-shadow: 0 0 0 .2rem rgba(255, 255, 255, .25);
 }
 
-.navbar-form input {
-     border: none !important;
-}
-
 .badge {
      font-weight: 500;
 }
@@ -253,30 +249,27 @@ button {
 
 /*-- navigation--*/
 
-.navigation.navbar {
-     float: right;
-     padding: 0px;
-     padding-top: 3px !important;
-     width:100%;
+.navbar {
+     z-index: 1;
 }
 
-.navigation.navbar-dark .navbar-nav .nav-link {
-     padding: 0 25px;
+.nav-link {
+     padding: .5rem 25px !important;
      color: #fff;
      font-size: 16px;
      line-height: 20px;
      text-transform: uppercase;
 }
 
-.navigation.navbar-dark .navbar-nav .nav-link:focus,
-.navigation.navbar-dark .navbar-nav .nav-link:hover {
+.nav-link:focus,
+.nav-link:hover {
      color: #e70139;
 }
 
-.navigation.navbar-dark .navbar-nav .active>.nav-link,
-.navigation.navbar-dark .navbar-nav .nav-link.active,
-.navigation.navbar-dark .navbar-nav .nav-link.show,
-.navigation.navbar-dark .navbar-nav .show>.nav-link {
+.active>.nav-link,
+.nav-link.active,
+.nav-link.show,
+.show>.nav-link {
      color: #e70139;
 }
 .hamburger{
@@ -287,6 +280,8 @@ button {
 
 /** banner section **/
 .logo img{
+  border-radius: 100%;
+  box-shadow: 0px 0px 5px 5px #430919;
   transition: transform 0.5s ease; /* Smooth transition effect */
 }
 .logo img:hover{
@@ -307,9 +302,9 @@ button {
      position: fixed;
      bottom:0;
      right:0;
-     background: darkslategray;
+     background: #430919;
      border-radius: 100%;
-     box-shadow: 3px 3px 5px darkslategray;
+     box-shadow: 3px 3px 5px #430919;
      height: 50px;
      width: 50px;
      margin: 20px;
@@ -397,28 +392,6 @@ button {
      }
 }
 
-.banner_main {
-     /*background: url(../images/banner.jpg);*/
-     background: black;
-     display: flex;
-     align-content: center;
-     align-items: center;
-     background-size: 100% 100%;
-     padding-top: 13%;
-
-     background-attachment: fixed;
-     background-position: center;
-     background-repeat: no-repeat;
-     background-size: cover;
-}
-
-.text-bg {
-     max-width: 669px;
-     float: right;
-     text-align: left;
-     width: 100%;
-}
-
 .bann_img {
      position: relative;
 }
@@ -430,7 +403,8 @@ button {
 
 
 .bann_img figure img {
-     width: 100%; 
+     width: 100%;
+     /*max-width: 370px; messes up the triangle if we do this */
 }
 
 .triangle {
@@ -787,16 +761,6 @@ button {
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  .banner_main {
-      padding-top: 18%;
-  }
-  .text-bg h1 {
-      font-size: 66px;
-      line-height: 87px;
-  }
-  .bann_img {
-      padding-right: 0;
-  }
   .titlepage h2 {
       font-size: 38px;
   }
@@ -809,16 +773,6 @@ button {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .banner_main {
-      padding-top: 18%;
-  }
-  .text-bg h1 {
-      font-size: 47px;
-      line-height: 69px;
-  }
-  .bann_img {
-      padding-right: 0px;
-  }
   .titlepage h2 {
       font-size: 30px;
       line-height: 41px;
@@ -843,9 +797,6 @@ button {
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-  .text-bg {
-      padding-top: 73px;
-  }
   .text-bg h1 {
       font-size: 57px;
       line-height: 81px;
@@ -882,45 +833,11 @@ button {
       margin-right: 0;
       margin-top: 30px;
   }
-  .navigation.navbar {
-      float: right;
-      display: inherit !important;
-      padding: 0;
-      width: 100%;
-  }
-  .navigation .navbar-collapse {
-      background: #000;
-      padding: 20px;
-      margin-top: 52px;
-      position: absolute;
-      width: 100%;
-      margin-right: 20px;
-      z-index: 999;
-  }
-  .navigation.navbar-dark .navbar-nav .nav-link {
-      padding: 10px 0;
-  }
-  .navigation.navbar-dark .navbar-toggler {
-      border: inherit;
-      float: right;
-  }
-  .navigation.navbar-dark .navbar-toggler-icon {
-    background: none;
-      background-repeat: no-repeat;
-  }
 }
 
 @media (max-width: 575px) {
   .header {
       padding: 30px 0px;
-  }
-  .logo {
-      text-align: center !important;
-      padding-bottom: 6px;
-      float: left;
-  }
-  .text-bg {
-      padding-top: 84px;
   }
   .text-bg a,#submit-button {
       margin-bottom: 30px;
@@ -973,25 +890,5 @@ button {
   .sm_show {
       display: block;
       padding-top: 30px;
-  }
-  .navigation .navbar-collapse {
-      background: #000;
-      padding: 20px;
-      margin-top: 62px;
-      position: absolute;
-      width: 100%;
-      margin-right: 20px;
-      z-index: 999;
-  }
-  .navigation.navbar-dark .navbar-nav .nav-link {
-      padding: 10px 0;
-  }
-  .navigation.navbar-dark .navbar-toggler {
-      float: right;
-      border: inherit;
-  }
-  .navigation.navbar-dark .navbar-toggler-icon {
-    background: none;
-      background-repeat: no-repeat;
   }
 }
