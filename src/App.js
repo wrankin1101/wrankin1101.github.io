@@ -46,70 +46,66 @@ function App() {
     <div className="App">
       {/*  header  */}
       <header>
-        <div class="container">
-        <nav class="navbar navbar-expand-md p">
-          <a class="navbar-brand" href="index.html">
-            <div class="logo">
-              <img src={logo} alt="#" style={{ width: "64px" }} />
+        <div class="container px-4">
+          <nav class="navbar navbar-expand-md p">
+            <a class="navbar-brand" href="index.html">
+              <div class="logo">
+                <img src={logo} alt="#" style={{ width: "64px" }} />
+              </div>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarToggle"
+              aria-controls="navbarToggle"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon">
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="#work">
+                    My Work
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#footer">
+                    Contact
+                  </a>
+                </li>
+              </ul>
             </div>
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarToggle"
-            aria-controls="navbarToggle"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon">
-              <div class="hamburger"></div>
-              <div class="hamburger"></div>
-              <div class="hamburger"></div>
-            </span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-              <a class="nav-link" href="#work">
-                          My Work
-                        </a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="#footer">
-                          Contact
-                        </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+          </nav>
         </div>
       </header>
       {/*  end header  */}
       {/*  background  */}
       <div id="cylinder1" class="cylinder"></div>
-        <div id="cylinder2" class="cylinder"></div>
-        <div id="cylinder3" class="cylinder"></div>
-        <div
-          id="back-to-top"
-          className={`fade-in-element ${backToTop ? "visible" : ""}`}
-          onClick={scrollToTop}
-        >
-          <img alt="back to top" src={triangle} />
-        </div>
+      <div id="cylinder2" class="cylinder"></div>
+      <div id="cylinder3" class="cylinder"></div>
+      <div
+        id="back-to-top"
+        className={`fade-in-element ${backToTop ? "visible" : ""}`}
+        onClick={scrollToTop}
+      >
+        <img alt="back to top" src={triangle} />
+      </div>
       {/*  end background  */}
       {/*  banner  */}
       <section class="banner_main pt-5">
-        <div class="container">
-          <div class="row d_flex align-items-start">
-            <div class="col-lg-7">
+        <div class="container px-4">
+          <div class="row d-flex">
+            <div class="col-lg-7 align-self-center">
               <div class="text-bg">
-                <div
-                  class="padding_lert titlepage"
-                  style={{ textAlign: "left", padding: "10px" }}
-                >
+                <div class="titlepage p-2">
                   <h1 class="typeIt">{useTypingEffect("Will Rankin", 80)}</h1>
-                  
                 </div>
               </div>
             </div>
@@ -127,15 +123,10 @@ function App() {
 
             <div class="col-lg-7">
               <div class="text-bg">
-                <div
-                  class="padding_lert titlepage"
-                  style={{ textAlign: "left", padding: "10px" }}
-                >
+                <div class="titlepage p-2">
                   <h2
-                    class="typeItLoop"
+                    class="typeItLoop mb-5"
                     style={{
-                      color: "white",
-                      marginBottom: "30px",
                       minHeight: "110px",
                     }}
                   >
@@ -292,76 +283,11 @@ function App() {
         </div>
       </section>
       {/*  end banner  */}
-      {/*  service  */}
-      <div id="services" class="service" style={{ display: "none" }}>
-        <div class="container-fluid">
-          <div class="row d_flex">
-            <div class="col-md-5">
-              <div class="service_img">
-                <figure>
-                  <img src="images/pc.png" alt="#" />
-                </figure>
-              </div>
-            </div>
-            <div class="col-md-7">
-              <div class="titlepage">
-                <h2>
-                  Full service digital capbilities From end to end workflow
-                </h2>
-                <span>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five
-                </span>
-                <a class="read_more" href="Javascript:void(0)">
-                  Read More
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/*  end service  */}
-      {/*  solutions  */}
-      <div class="solutions" style={{ display: "none" }}>
-        <div class="container">
-          <div class="row d_flex">
-            <div class="col-md-7">
-              <div class="titlepage">
-                <h2>
-                  Solutions for every <br />
-                  Specific need
-                </h2>
-                <span>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five
-                </span>
-                <a class="read_more" href="Javascript:void(0)">
-                  Read More
-                </a>
-              </div>
-            </div>
-            <div class="col-md-5">
-              <div class="solutions_img">
-                <figure>
-                  <img src="images/solusan.png" alt="#" />
-                </figure>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/*  end solutions  */}
       {/*  work  */}
       <div id="work" class="work">
-        <div class="container">
+        <div class="container px-4">
           <div class="row spacer"></div>
-          <div class="titlepage">
+          <div class="titlepage pb-5">
             <h3>Apps</h3>
           </div>
           <div class="row">
@@ -437,7 +363,7 @@ function App() {
               <br />
             </div>
           </div>
-          <div class="titlepage">
+          <div class="titlepage pb-5">
             <h3>Websites</h3>
           </div>
           <div class="row">
@@ -533,18 +459,18 @@ function App() {
       {/*   footer  */}
       <footer>
         <div id="footer" class="footer">
-          <div class="container">
+          <div class="container px-4">
             <div class="row spacer"></div>
             <div class="row">
               <div class="col-md-6"></div>
               <div class="col-md-6"></div>
             </div>
             <div class="row">
-              <div class="col-md-6">
-                <div class="titlepage">
+              <div class="col-lg-6 pb-5">
+                <div class="titlepage pb-5">
                   <h3>Let’s Talk </h3>
                 </div>
-                <div class="contac_detel">
+                <div class="contact-links">
                   <ul>
                     <li>
                       <img src={call} alt="#" />
@@ -590,13 +516,13 @@ function App() {
                   </ul>
                 </div>
               </div>
-              <div class="col-md-6">
-                <div class="titlepage">
+              <div class="col-lg-6">
+                <div class="titlepage pb-5">
                   <h3>Quick Contact </h3>
                 </div>
                 <form method="post" id="contact-form">
                   <div class="row">
-                    <div class="col-6 col-12-xsmall">
+                    <div class="col-md-6 col-sm-12">
                       <div class="form-group">
                         <input
                           type="text"
@@ -607,7 +533,7 @@ function App() {
                         />
                       </div>
                     </div>
-                    <div class="col-6 col-12-xsmall">
+                    <div class="col-md-6 col-sm-12">
                       <div class="form-group">
                         <input
                           type="email"
@@ -633,8 +559,8 @@ function App() {
                   <br />
                   <div class="row">
                     <div class="col-12">
-                      <ul class="actions text-bg">
-                        <li>
+                      <ul class="actions">
+                        <li class="d-flex">
                           <input
                             id="submit-button"
                             type="submit"
@@ -690,7 +616,7 @@ const useTypingEffect = (text, delay = 100, commaPause = 3000) => {
       await new Promise((resolve) => setTimeout(resolve, msDelay));
       setTypedText((prev) => prev.substring(0, prev.length - 1));
     }
-    
+
     typeCharacter(); // Start the typing effect
 
     return () => {
