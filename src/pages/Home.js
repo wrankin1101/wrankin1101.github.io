@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import TypingEffect from "../components/TypingEffect";
 import "../App.css";
 
 //images
@@ -13,7 +14,13 @@ import linkedIn from "../assets/images/linkedin.svg";
 import mail from "../assets/images/gmail.png";
 import github from "../assets/images/square-github.svg";
 
-function App() {
+function Home() {
+    const [fadeIn, setFade] = useState(false);
+  
+    useEffect(() => {
+      setFade(true);
+    }, []);
+
   return (
     <>
       {/*  banner  */}
@@ -23,7 +30,7 @@ function App() {
             <div class="col-lg-7 align-self-center">
               <div class="text-bg">
                 <div class="titlepage p-2">
-                  <h1 class="typeIt">{useTypingEffect("Will Rankin", 80)}</h1>
+                  <h1 class="typeIt">{TypingEffect("Will Rankin", 80)}</h1>
                 </div>
               </div>
             </div>
@@ -31,10 +38,10 @@ function App() {
             <div class="bann-img-col col-lg-5 col-md-12">
               <div class="bann-img m-5">
                 <div class="triangle">
-                  <img src={spinTriangle} alt="#" />
+                  <img src={spinTriangle} alt="#" className={`fade-in-element ${fadeIn ? "visible" : ""}`}/>
                 </div>
                 <figure>
-                  <img src={headshot} alt="#" />
+                  <img src={headshot} alt="#" className={`fade-in-element ${fadeIn ? "visible" : ""}`}/>
                 </figure>
               </div>
             </div>
@@ -48,7 +55,7 @@ function App() {
                       minHeight: "110px",
                     }}
                   >
-                    {useTypingEffect(
+                    {TypingEffect(
                       "Full-Stack Developer, Teacher, Explorer",
                       80
                     )}
@@ -497,48 +504,4 @@ function App() {
   );
 }
 
-const useTypingEffect = (text, delay = 100, commaPause = 3000) => {
-  const [typedText, setTypedText] = useState("");
-
-  useEffect(() => {
-    let isCancelled = false; // To handle cleanup
-
-    const typeCharacter = async () => {
-      for (let i = 0; i < text.length; i++) {
-        if (isCancelled) return;
-
-        setTypedText((prev) => prev + text[i]);
-
-        if (text[i] === ",") {
-          await blinkCursor(commaPause);
-        }
-        await new Promise((resolve) => setTimeout(resolve, delay));
-      }
-    };
-    async function blinkCursor(msDelay) {
-      setTypedText((prev) => prev + "_");
-      await new Promise((resolve) => setTimeout(resolve, msDelay));
-      setTypedText((prev) => prev.substring(0, prev.length - 1));
-    }
-
-    typeCharacter(); // Start the typing effect
-
-    return () => {
-      isCancelled = true; // Cleanup to cancel typing effect if component unmounts
-    };
-  }, [commaPause, delay, text]);
-
-  return typedText.split("").map((char, index) =>
-    char === "_" ? (
-      <div key={index} class="typecursor">
-        &nbsp;&nbsp;
-      </div>
-    ) : (
-      <div key={index} class="typeletter">
-        {char}
-      </div>
-    )
-  );
-};
-
-export default App;
+export default Home;

@@ -551,6 +551,8 @@ button {
 .copyright {
   background: #6f0720;
   margin-top: 90px;
+  position: relative;
+  z-index:1;
 }
 
 .copyright p {

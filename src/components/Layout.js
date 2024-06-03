@@ -91,7 +91,7 @@ const Layout = ({ children }) => {
 
       <footer>
         <div class="copyright">
-          <div class="container p-2">
+          <div class="container p-3">
             <div class="row">
               <div class="col-md-12">
                 <p class="py-2">
