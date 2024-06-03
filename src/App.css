@@ -247,7 +247,6 @@ button {
 .cylinder {
   width: 70px; /* Adjust width */
   height: 600px; /* Adjust height */
-  background-color: #007bff; /* Adjust color */
   border-radius: 35px;
 
   transform: rotate(45deg);
@@ -284,6 +283,7 @@ button {
 }
 
 .nav-link {
+  text-align: right;
   padding: 0.5rem 25px !important;
   color: #fff;
   font-size: 16px;
@@ -467,39 +467,34 @@ button {
   text-decoration: underline !important;
 }
 
-.our_work {
+.my_work {
   margin-bottom: 30px;
 }
 
-.our_work figure {
+.my_work figure {
   margin: 0px;
 }
 
-.our_work figure img {
+.my_work figure img {
   transition: ease-in all 0.2s;
   width: 100%;
   border-radius: 0.5rem;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Apply a box-shadow to create a shadow effect */
 }
 
-.our_work figure img:hover {
-  transform: scale(0.97);
+.my_work figure img:hover {
+  transform: scale(0.99);
 }
 
 /** end work section **/
 
 /** footer **/
 
-.footer {
+.contact {
   padding-bottom: 60px;
   background-color: black;
   padding-top: 90px;
   text-align: center;
-
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .multipurpose {
@@ -554,7 +549,7 @@ button {
 }
 
 .copyright {
-  background: #e70139;
+  background: #6f0720;
   margin-top: 90px;
 }
 
@@ -562,7 +557,6 @@ button {
   color: #fff;
   font-size: 17px;
   line-height: 22px;
-  padding: 20px 0px;
   font-weight: 400;
 }
 
@@ -575,6 +569,20 @@ button {
 }
 
 /** end footer **/
+/** comment Writer **/
+#commentWriterApp .factorGroup,#studentInfoDiv,#generateDiv{
+  background:#E8E9EE;
+}
+#commentWriterApp .input-group-text{
+  background:#CAD6E2;
+}
+@media (min-width: 768px) {
+  .sticky-column {
+      position: sticky;
+      top: 0;
+  }
+}
+/** end comment writer **/
 
 /*--------------------------------------------------------------------- Responsive ---------------------------------------------------------------------*/
 
