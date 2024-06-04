@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import TypingEffect from "../components/TypingEffect";
-import "../App.css";
 
 //images
 import spinTriangle from "../assets/images/triangle of justice_skinny.png";

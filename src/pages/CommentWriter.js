@@ -3,6 +3,7 @@ import Cookies from "js-cookie"; // If using js-cookie
 import _ from "underscore";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import info from "../assets/icons/info.svg"
 
 function CommentWriter() {
   // Define the default state values here
@@ -317,7 +318,7 @@ function CommentWriter() {
         <div className="row">
           <div className="col-md mb-4">
             <div id="studentInfoDiv" className="rounded p-3">
-              <h5>Student Info</h5>
+              <h2>Student Info</h2>
               
               <div className="mb-3">
                 <label htmlFor="textName" className="form-label">
@@ -370,7 +371,7 @@ function CommentWriter() {
                   Female
                 </label>
               </div>
-              <label className="mt-3">
+              <div className="form-check mt-3">
                 <input
                   id="chkrandom"
                   type="checkbox"
@@ -378,15 +379,17 @@ function CommentWriter() {
                   checked={state.chkrandom}
                   onChange={checkRandom}
                 />
-                &nbsp; Random Sentence Order
+                <label className="form-check-label" htmlFor="chkrandom">
+                    Random Sentence Order
+                </label>
                 <InfoBubble
                   message={
                     "Jumbles the sentences if the comments are getting repetitive."
                   }
                 />
-              </label>
-              <div className="row mt-3">
-                <div className="col-3">
+              </div>
+              <div className="row mt-3 d-flex">
+                <div className="px-2">
                   <button
                     className="btn btn-outline-secondary"
                     onClick={downloadJsonFile}
@@ -394,7 +397,7 @@ function CommentWriter() {
                     Save Settings
                   </button>
                 </div>
-                <div className="col-3">
+                <div className="px-2">
                   <div>
                     <label for="files" className="btn btn-outline-secondary">
                       Load Settings
@@ -407,7 +410,7 @@ function CommentWriter() {
                     />
                   </div>
                 </div>
-                <div className="col-3">
+                <div className="px-2">
                   <button
                     id="resetBtn"
                     className="btn btn-outline-secondary float-end"
@@ -434,16 +437,21 @@ function CommentWriter() {
           </div>
           <div className="col-md">
             <div id="generateDiv" className="rounded p-3 sticky-column">
-              <h5>
+                <div class="d-flex">
+                <h2>
                 Comment Output
-                <button
+                
+              </h2>
+              <button
                   id="writecomment"
-                  className="btn btn-primary float-end"
+                  className="btn btn-primary ml-auto"
                   onClick={copyToClipboard}
                 >
                   Copy Comment
                 </button>
-              </h5>
+              
+                </div>
+              
 
               <span
                 id="alertCopy"
@@ -504,14 +512,15 @@ function FactorList(props) {
             className="factor px-3 pb-3"
           >
             <div className="input-group">
+            <div class="input-group-prepend">
               <label className="input-group-text">
                 <input
                   type="checkbox"
-                  className="form-check-input"
                   checked={factor.checked}
                   onChange={() => updateFactorCheck(parentIndex, index)}
                 />
               </label>
+              </div>
               <input
                 className="factorTitle form-control"
                 value={factor.title}
@@ -519,12 +528,14 @@ function FactorList(props) {
                   updateFactorTitle(event.target.value, parentIndex, index)
                 }
               />
+              <div class="input-group-append">
               <button
                 className="deleteFactor btn btn-danger"
                 onClick={() => deleteFactor(parentIndex, index)}
               >
                 X
               </button>
+              </div>
             </div>
             <textarea
               className="form-control border-top-0"
@@ -544,7 +555,7 @@ function FactorList(props) {
 function InfoBubble({ message }) {
   return (
     <OverlayTrigger overlay={<Tooltip>{message}</Tooltip>}>
-      <i className="fa fa-circle-info ms-1"></i>
+      <img class="infoBubble mx-1" src={info} alt="#" />
     </OverlayTrigger>
   );
 }

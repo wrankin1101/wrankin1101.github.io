@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 
 function TypingEffect(text, delay = 100, commaPause = 3000){
     const [typedText, setTypedText] = useState("");
+    let textIndex = useRef(0);
     
     useEffect(() => {
       let isCancelled = false; // To handle cleanup
@@ -10,6 +11,7 @@ function TypingEffect(text, delay = 100, commaPause = 3000){
         for (let i = 0; i < text.length; i++) {
           if (isCancelled) return;
   
+          textIndex.current = i;
           setTypedText((prev) => prev + text[i]);
   
           if (text[i] === ",") {
@@ -25,7 +27,7 @@ function TypingEffect(text, delay = 100, commaPause = 3000){
         setTypedText((prev) => prev.substring(0, prev.length - 1));
       }
 
-      if (typedText === "")
+      if (textIndex.current === 0)
         typeCharacter(); // Start the typing effect
   
       return () => {
