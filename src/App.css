@@ -196,7 +196,7 @@ button {
   z-index: 1;
 }
 
-.fade-in-element {
+.fade-in-element { /* js fade in, set to .visible */
   opacity: 0;
   transition: opacity 1s ease-in-out;
   will-change: opacity; /* Optimization hint for the browser */
@@ -204,6 +204,21 @@ button {
 .fade-in-element.visible {
   opacity: 1;
 }
+
+.fadeIn{ /* automatic fade in */
+  animation: fadeIn 1s ease-in forwards;
+  will-change: opacity; /* Optimization hint for the browser */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 #back-to-top {
   position: fixed;
   bottom: 0;
@@ -581,6 +596,7 @@ button {
 .infoBubble{
   width:20px;
 }
+
 @media (min-width: 768px) {
   .sticky-column {
       position: sticky;

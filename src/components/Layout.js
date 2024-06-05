@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { scrollToTop } from "../components/Utils";
 
 //images
 import triangle from "../assets/images/trianglecropped.png";
 import logo from "../assets/images/icon192.png";
+import { Link } from "react-router-dom";
 
 const Layout = ({ children }) => {
   const [backToTop, showBackToTop] = useState(false);
@@ -25,23 +27,16 @@ const Layout = ({ children }) => {
     };
   }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <>
       <header>
         <div class="container px-4">
           <nav class="navbar navbar-expand-md p">
-            <a class="navbar-brand" href="/">
+            <Link class="navbar-brand" to="/home">
               <div class="logo">
                 <img src={logo} alt="#" style={{ width: "64px" }} />
               </div>
-            </a>
+            </Link>
             <button
               class="navbar-toggler"
               type="button"
@@ -60,14 +55,14 @@ const Layout = ({ children }) => {
             <div class="collapse navbar-collapse" id="navbarToggle">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="#work">
+                  <Link class="nav-link" to="/home#work">
                     My Work
-                  </a>
+                  </Link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#contact">
+                  <Link class="nav-link" to="/home#contact">
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

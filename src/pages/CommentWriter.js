@@ -4,6 +4,8 @@ import _ from "underscore";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import info from "../assets/icons/info.svg"
+import { scrollToTop } from "../components/Utils";
+import TypingEffect from "../components/TypingEffect";
 
 function CommentWriter() {
   // Define the default state values here
@@ -308,13 +310,17 @@ function CommentWriter() {
     });
     setComment(comment.trim());
     setCopied("");
+    scrollToTop();
     //set cookie
     Cookies.set("state", JSON.stringify(state), { expires: 365 });
   }, [state]);
 
   return (
-    <div className="commentWriterApp">
+    <div className="commentWriterApp fadeIn">
       <div className="container py-4">
+      <div class="d-flex titlepage py-4">
+        <h2>{TypingEffect("Comment Writer Demo",80)}</h2>
+    </div>
         <div className="row">
           <div className="col-md mb-4">
             <div id="studentInfoDiv" className="rounded p-3">
