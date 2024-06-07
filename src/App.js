@@ -3,7 +3,8 @@ import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import CommentWriter from './pages/CommentWriter';
-import "./App.css";
+import HeaterDemo from './pages/HeaterDemo';
+import "./styles/App.css";
 import ScrollToAnchor from './components/ScrollToAnchor';
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/home" element={<Home />} />
         <Route path="/index" element={<Home />} />
         <Route path="/commentwriter" element={<CommentWriter />} />
+        <Route path="/heaterdemo" element={<HeaterDemo />} />
         {/*<Route path="/about" element={<About />} />*/}
       </Routes>
       <ScrollToAnchor />

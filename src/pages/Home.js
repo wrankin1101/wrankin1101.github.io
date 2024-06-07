@@ -172,14 +172,9 @@ function Home() {
                   </a>
                 </figure>
               </div>
-              <a
-                href="https://www.oemheaters.com/configurators/sr/config.aspx"
-                target="_blank"
-                class="work_link"
-                rel="noreferrer"
-              >
+              <Link to="/heaterdemo" class="work_link">
                 <h3>Custom Product Creator App</h3>
-              </a>
+              </Link>
               <p>
                 Created jQuery apps that allowed users to create custom
                 products, which increased sales and created leads.

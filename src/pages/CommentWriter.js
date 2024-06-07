@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Cookies from "js-cookie"; // If using js-cookie
 import _ from "underscore";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import Tooltip from "react-bootstrap/Tooltip";
-import info from "../assets/icons/info.svg"
-import { scrollToTop } from "../components/Utils";
+import { scrollToTop, InfoBubble } from "../components/Utils";
 import TypingEffect from "../components/TypingEffect";
 
 function CommentWriter() {
@@ -555,14 +552,6 @@ function FactorList(props) {
         ))}
       </div>
     </div>
-  );
-}
-
-function InfoBubble({ message }) {
-  return (
-    <OverlayTrigger overlay={<Tooltip>{message}</Tooltip>}>
-      <img class="infoBubble mx-1" src={info} alt="#" />
-    </OverlayTrigger>
   );
 }
 
