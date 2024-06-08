@@ -391,7 +391,7 @@ function CommentWriter() {
                   }
                 />
               </div>
-              <div className="row mt-3 d-flex">
+              <div className="mt-3 d-flex">
                 <div className="px-2">
                   <button
                     className="btn btn-outline-secondary"
@@ -441,9 +441,8 @@ function CommentWriter() {
           <div className="col-md">
             <div id="generateDiv" className="rounded p-3 sticky-column">
                 <div class="d-flex">
-                <h2>
+                <h2 class="flex-grow-1">
                 Comment Output
-                
               </h2>
               <button
                   id="writecomment"
@@ -466,7 +465,7 @@ function CommentWriter() {
               <br />
               <textarea
                 id="commentout"
-                className="form-control mt-3 border-2"
+                className="form-control border-2"
                 rows="10"
                 value={commentOut}
                 readOnly={true}
