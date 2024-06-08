@@ -1,16 +1,14 @@
-.row {
-  transition: all 1s;
-}
 
 #configWrapper {
-  max-width: 540px;
+  max-width: 768px;
+  color:rgba(245, 245, 245, 0.692);
 }
 .box {
-  border: 1px black solid;
+  border: 1px rgba(245, 245, 245, 0.609) solid;
   border-radius: 5px;
 }
 .box h3{
-  border-bottom: 1px solid black;
+  border-bottom: 1px rgba(245, 245, 245, 0.609) solid;
   padding:10px;
   font-size: large;
 }
@@ -19,6 +17,7 @@
   font-size: medium;
 }
 .configTitle h5{
+  color:white;
   font-size: 1.1rem;
   margin: 8px 0px 0px 0px;
 }
@@ -51,6 +50,7 @@
   width:132px;
   transform: rotate(90deg);
   transform-origin: left;
+  margin-left: 20px;
 }
 #lengthRange {
   width:300px;
@@ -73,17 +73,16 @@
 }
 #dimDiv 
 {
-    /*background-image:url("/public/images/SRtexture.png");*/
     background-repeat:repeat;
     border: 1px solid #c62f24;
     float: left;
 }
 #diamDiv 
 {
-    /*background-image:url("/public/images/SRtexture.png");*/
     background-repeat:repeat;
     border: 1px solid #c62f24;
     float: left;
+    border-radius: 50%;
 }
 
 .hidden {

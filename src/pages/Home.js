@@ -27,7 +27,7 @@ function Home() {
           <div class="row d-flex">
             <div class="col-lg-7 align-self-center">
               <div class="text-bg">
-                <div class="titlepage p-2">
+                <div class="p-2">
                   <h1>{TypingEffect("Will Rankin", 80)}</h1>
                 </div>
               </div>
@@ -54,9 +54,9 @@ function Home() {
 
             <div class="col-lg-7">
               <div class="text-bg">
-                <div class="titlepage p-2">
+                <div class="p-2">
                   <h2
-                    class="mb-5"
+                    class="mb-5 white"
                     style={{
                       minHeight: "110px",
                     }}
@@ -124,8 +124,8 @@ function Home() {
       <section id="work" class="work fadeIn">
         <div class="container px-4">
           <div class="row spacer"></div>
-          <div class="titlepage pb-5">
-            <h3>Apps</h3>
+          <div class="pb-5">
+            <h3 class="white">Apps</h3>
           </div>
           <div class="row">
             <div class="col-md-6">
@@ -187,8 +187,8 @@ function Home() {
               <br />
             </div>
           </div>
-          <div class="titlepage pb-5">
-            <h3>Websites</h3>
+          <div class="pb-5">
+            <h3 class="white">Websites</h3>
           </div>
           <div class="row">
             <div class="col-md-6">
@@ -290,8 +290,8 @@ function Home() {
           </div>
           <div class="row">
             <div class="col-lg-6 pb-5">
-              <div class="titlepage pb-5">
-                <h3>Let’s Talk </h3>
+              <div class="pb-5">
+                <h3 class="white">Let’s Talk </h3>
               </div>
               <div class="contact-links">
                 <ul>
@@ -340,8 +340,8 @@ function Home() {
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="titlepage pb-5">
-                <h3>Quick Contact </h3>
+              <div class="pb-5">
+                <h3 class="white">Quick Contact </h3>
               </div>
               <form method="post" id="contact-form">
                 <div class="row">

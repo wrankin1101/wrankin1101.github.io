@@ -1,6 +1,6 @@
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
-import info from "../assets/icons/info.svg"
+import { ReactComponent as Info } from "../assets/icons/info.svg";
 
 export const scrollToTop = () => {
     window.scrollTo({
@@ -9,10 +9,10 @@ export const scrollToTop = () => {
     });
   };
 
-export function InfoBubble({ message }) {
+export function InfoBubble({ message, color='black' }) {
     return (
       <OverlayTrigger overlay={<Tooltip>{message}</Tooltip>}>
-        <img class="infoBubble mx-1" src={info} alt="#" />
+        <Info color={color} class="infoBubble mx-1"/>
       </OverlayTrigger>
     );
   }

@@ -2,6 +2,9 @@ import React, { Fragment, useEffect, useState } from "react";
 import "../styles/HeaterDemo.css";
 import * as data from "../components/HeaterData.js";
 import { scrollToTop, InfoBubble } from "../components/Utils";
+import TypingEffect from "../components/TypingEffect.js"
+import { ReactComponent as DownArrow } from "../assets/icons/downarrow.svg";
+import heaterBg from "../assets/images/heater_demo/SRtexture.png"
 
 function HeaterDemo() {
   const [limits, setLimits] = useState(data.defaultLimits);
@@ -150,13 +153,14 @@ function HeaterDemo() {
   }, []);
 
   return (
-    <div id="configWrapper" className="container py-4 App">
+    <div id="configWrapper" className="container py-4 App fadeIn">
+        <h2 class="white pb-4">{TypingEffect("Product Creator Demo",80)}</h2>
       <div className="row">
         <div className="col-12">
           <div id="dimen" className="box" role="tablist">
-            <h3>
-              <i className="fa-solid fa-caret-down pe-2 fa-xs"></i>
-              <b>Silicone Rubber Heater Configuration</b>
+            <h3 class="white">
+              <DownArrow />&nbsp;&nbsp;
+              Industrial Heater Configuration
             </h3>
             <div className="boxInfo p-3">
               <ButtonGroup
@@ -202,7 +206,7 @@ function HeaterDemo() {
                         <div className="col-1 g-0" id="verticalCol">
                           <input
                             type="range"
-                            className="form-range pb-4"
+                            className="form-range"
                             step=".25"
                             min={limits.minWidth}
                             max={limits.maxWidth}
@@ -215,9 +219,9 @@ function HeaterDemo() {
                           <div
                             id="dimDiv"
                             style={{
+                                backgroundImage: `url(${heaterBg})`,
                               width: (length / limits.maxLength) * 100 + "%",
                               height: (width / limits.maxWidth) * 100 + "%",
-                              borderRadius: "0%",
                             }}
                           />
                         </div>
@@ -254,9 +258,9 @@ function HeaterDemo() {
                           <div
                             id="diamDiv"
                             style={{
+                                backgroundImage: `url(${heaterBg})`,
                               height: (diameter / limits.maxDiam) * 100 + "%",
                               width: (diameter / limits.maxDiam) * 100 + "%",
-                              borderRadius: "50%",
                             }}
                           />
                         </div>
@@ -270,7 +274,7 @@ function HeaterDemo() {
                       <input className="form-control" type="file" id="otherShapeUpload"/>
                       <br />
                       Please upload a file
-                      <InfoBubble message="Accepted file extensions are: .gif, .png, .jpeg, .jpg, and .pdf" />
+                      <InfoBubble color="whitesmoke" message="Accepted file extensions are: .gif, .png, .jpeg, .jpg, and .pdf" />
                       &nbsp; that clearly shows the dimensions of your desired
                       silicone rubber heater, along with any additional holes or
                       cutouts you may require.
@@ -285,9 +289,9 @@ function HeaterDemo() {
             </div>
           </div>
           <div id="closeLeadsTstat" className="box" role="tablist">
-            <h3>
-              <i className="fa-solid fa-caret-down pe-2 fa-xs"></i>
-              <b>Leads, Closures, and Thermostats</b>
+            <h3 class="white">
+            <DownArrow />&nbsp;&nbsp;
+              Leads, Closures, and Thermostats
             </h3>
             <div className="boxInfo p-3">
               <ButtonGroup
@@ -319,7 +323,7 @@ function HeaterDemo() {
                     <div className="col-6">
                       {data.btnInfo[leads].desc}
                       {data.btnInfo[leads].note !== "" && (
-                      <InfoBubble message={data.btnInfo[leads].note} />
+                      <InfoBubble message={data.btnInfo[leads].note} color="whitesmoke" />
                       )}
                     </div>
                     
@@ -357,7 +361,7 @@ function HeaterDemo() {
                       <div className="col-6">
                         {data.btnInfo[closure].desc}
                         {data.btnInfo[closure].note !== "" && (
-                      <InfoBubble message={data.btnInfo[closure].note} />
+                      <InfoBubble message={data.btnInfo[closure].note} color="whitesmoke" />
                       )}
                       </div>
                     </div>
@@ -413,7 +417,7 @@ function HeaterDemo() {
                       <div className="col-6">
                         {data.btnInfo[tstat].desc}
                         {data.btnInfo[tstat].note !== "" && (
-                      <InfoBubble message={data.btnInfo[tstat].note} />
+                      <InfoBubble message={data.btnInfo[tstat].note} color="whitesmoke" />
                       )}
                       </div>
                     </div>
@@ -429,23 +433,23 @@ function HeaterDemo() {
             </div>
           </div>
           <div id="powerVoltage" className="box" role="tablist">
-            <h3>
-              <i className="fa-solid fa-caret-down pe-2 fa-xs"></i>
-              <b>Power, Voltage, and Submit</b>
+            <h3 class="white">
+            <DownArrow />&nbsp;&nbsp;
+              Power, Voltage, and Submit
             </h3>
             <div className="boxInfo p-3">
               <div className="row infoRow center">
                 <div className="col-6">
                   Max Watt Density
-                  <InfoBubble message="The durability and performance of a heater depends on selecting the appropriate wattage. Exceeding the maximum allowable watt density for the specified heater size will result in premature heater failure." />
+                  <InfoBubble color="whitesmoke" message="The durability and performance of a heater depends on selecting the appropriate wattage. Exceeding the maximum allowable watt density for the specified heater size will result in premature heater failure." />
                   <hr />
-                  <h5>{limits.maxWattDensity}</h5>W/in<sup>2</sup>
+                  <h5>{limits.maxWattDensity}</h5>&nbsp;W/in<sup>2</sup>
                 </div>
                 <div className="col-6">
                   Max Amperage
-                  <InfoBubble message="Amps = Watts / Volts. Silicone rubber heaters have a limit of 15 amps for a single circuit. More circuits are available on request. Thermostats are also limited in the amperage they can tolerate at any particular voltage." />
+                  <InfoBubble color="whitesmoke" message="Amps = Watts / Volts. Silicone rubber heaters have a limit of 15 amps for a single circuit. More circuits are available on request. Thermostats are also limited in the amperage they can tolerate at any particular voltage." />
                   <hr />
-                  <h5>{limits.maxAmps}</h5>Amps
+                  <h5>{limits.maxAmps}</h5>&nbsp;Amps
                 </div>
               </div>
               <Spinner
@@ -527,20 +531,22 @@ function ButtonGroup(props) {
     <div className={`row my-3 buttonRow`}>
       <div className="col-3 configTitle align-items-center">{showTitle && <h5>{title}:</h5>}</div>
       <div className="col-9">
-        <div className="btn-group" role="group" aria-label="Leads Buttons">
+        <div className="btn-group" role="group">
           {values.map((value, index) => (
             <Fragment key={title + index}>
               <input
                 type="radio"
-                className="btn-check"
+                class="btn-check"
+                name={title+"radio"}
                 id={title + index}
                 checked={stateVar === value}
                 onChange={(event) => callback(event.target.value)}
                 value={value}
+                autoComplete="off"
               />
               <label
                 key={title + index}
-                className="btn btn-outline-dark"
+                class="btn btn-outline-danger"
                 htmlFor={title + index}
               >
                 {value}
