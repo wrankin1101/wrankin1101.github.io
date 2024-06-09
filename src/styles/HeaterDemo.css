@@ -90,11 +90,13 @@
   overflow: hidden;
   display: block;
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: all 1s ease;
 }
 
 .hidden.show {
   max-height: inherit; /* Set this to an appropriate value */
   opacity: 1;
 }
-
+.form-select {
+  width:auto;
+}

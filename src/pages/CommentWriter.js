@@ -315,14 +315,13 @@ function CommentWriter() {
   return (
     <div className="commentWriterApp fadeIn">
       <div className="container py-4">
-      <div class="d-flex py-4">
-        <h2 class="white">{TypingEffect("Comment Writer Demo",80)}</h2>
-    </div>
+        <div class="d-flex py-4">
+          <h2 class="white">{TypingEffect("Comment Writer Demo", 80)}</h2>
+        </div>
         <div className="row">
           <div className="col-md mb-4">
             <div id="studentInfoDiv" className="rounded p-3">
               <h2>Student Info</h2>
-              
               <div className="mb-3">
                 <label htmlFor="textName" className="form-label">
                   Name:
@@ -383,7 +382,7 @@ function CommentWriter() {
                   onChange={checkRandom}
                 />
                 <label className="form-check-label" htmlFor="chkrandom">
-                    Random Sentence Order
+                  Random Sentence Order
                 </label>
                 <InfoBubble
                   message={
@@ -440,21 +439,16 @@ function CommentWriter() {
           </div>
           <div className="col-md">
             <div id="generateDiv" className="rounded p-3 sticky-column">
-                <div class="d-flex">
-                <h2 class="flex-grow-1">
-                Comment Output
-              </h2>
-              <button
+              <div class="d-flex">
+                <h2 class="flex-grow-1">Comment Output</h2>
+                <button
                   id="writecomment"
                   className="btn btn-primary ml-auto"
                   onClick={copyToClipboard}
                 >
                   Copy Comment
                 </button>
-              
-                </div>
-              
-
+              </div>
               <span
                 id="alertCopy"
                 className="text-danger"
@@ -514,14 +508,14 @@ function FactorList(props) {
             className="factor px-3 pb-3"
           >
             <div className="input-group">
-            <div class="input-group-prepend">
-              <label className="input-group-text">
-                <input
-                  type="checkbox"
-                  checked={factor.checked}
-                  onChange={() => updateFactorCheck(parentIndex, index)}
-                />
-              </label>
+              <div class="input-group-prepend">
+                <label className="input-group-text">
+                  <input
+                    type="checkbox"
+                    checked={factor.checked}
+                    onChange={() => updateFactorCheck(parentIndex, index)}
+                  />
+                </label>
               </div>
               <input
                 className="factorTitle form-control"
@@ -531,12 +525,12 @@ function FactorList(props) {
                 }
               />
               <div class="input-group-append">
-              <button
-                className="deleteFactor btn btn-danger"
-                onClick={() => deleteFactor(parentIndex, index)}
-              >
-                X
-              </button>
+                <button
+                  className="deleteFactor btn btn-danger"
+                  onClick={() => deleteFactor(parentIndex, index)}
+                >
+                  X
+                </button>
               </div>
             </div>
             <textarea

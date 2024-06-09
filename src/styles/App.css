@@ -460,7 +460,6 @@ h3.white {
 /** work section **/
 
 .work {
-  background: black;
   padding-top: 90px;
 }
 .work h2 {
@@ -503,7 +502,6 @@ h3.white {
 
 .contact {
   padding-bottom: 60px;
-  background-color: black;
   padding-top: 90px;
   text-align: center;
 }

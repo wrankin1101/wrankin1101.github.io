@@ -309,6 +309,15 @@ function HeaterDemo() {
                   showTitle={false}
                 />
               </div>
+              <Spinner
+                    stateVar={leadLength}
+                    callback={leadLengthChange}
+                    min={limits.minLeadLength}
+                    max={limits.maxLeadLength}
+                    title={"Lead Length"}
+                    units={"in."}
+                  />
+              
                 
               <div className="row my-3 ">
                 <div className="col-9 offset-3">
@@ -328,15 +337,7 @@ function HeaterDemo() {
                     </div>
                     
                   </div>
-                  <Spinner
-                    stateVar={leadLength}
-                    callback={leadLengthChange}
-                    min={limits.minLeadLength}
-                    max={limits.maxLeadLength}
-                    title={"Lead Length"}
-                    units={"in."}
-                    colWidth={6}
-                  />
+                  
                   <hr />
                 </div>
               </div>
@@ -374,21 +375,26 @@ function HeaterDemo() {
                 title={"Thermostat"}
                 values={data.btnVals.tstatVals}
               />
-                <div className={`row my-3 hidden ${tstat !== "None" ? 'show' : ''}`}>
-                  <div className="col-9 offset-3">
-                    <div className="row my-3">
-                      <div className="col-6 configTitle">
+              <div className={`hidden ${tstat !== "None" ? 'show' : ''}`}>
+              <div class="row my-3">
+              <div className="col-3 configTitle">
                         <h5 >
                           Thermostat Type:
                         </h5>
                        </div>
-                       <div className="col-6"> 
+                       <div className="col-9"> 
                         <TstatTypes
                           callback={tstatTypeChange}
                           options={data.btnInfo[tstat].options}
                         />
                       </div>
-                    </div>
+              </div>
+                      
+              </div>
+              <div className={`hidden ${tstat !== "None" ? 'show' : ''}`}>
+              <div className={`row my-3`}>
+                  <div className="col-9 offset-3">
+                    
                     <div className="row center infoRow my-3">
                       <div className="col-6">
                         Low Temp (Heater On):
@@ -424,6 +430,8 @@ function HeaterDemo() {
                     <hr />
                   </div>
                 </div>
+              </div>
+                
               <ButtonGroup
                 stateVar={tcouple}
                 callback={tcoupleChange}
@@ -529,7 +537,7 @@ function ButtonGroup(props) {
 
   return (
     <div className={`row my-3 buttonRow`}>
-      <div className="col-3 configTitle align-items-center">{showTitle && <h5>{title}:</h5>}</div>
+      <div className="col-3 configTitle">{showTitle && <h5>{title}:</h5>}</div>
       <div className="col-9">
         <div className="btn-group" role="group">
           {values.map((value, index) => (
