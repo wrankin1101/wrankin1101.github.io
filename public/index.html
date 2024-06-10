@@ -36,38 +36,5 @@
    
     <div id="root"></div>
     
-    <!-- Javascript files-->
-   <script src="%PUBLIC_URL%/scripts/jquery.min.js"></script>
-   <script src="%PUBLIC_URL%/scripts/bootstrap.bundle.min.js"></script>
-   <script src="%PUBLIC_URL%/scripts/jquery-3.0.0.min.js"></script>
-   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-   <script>
-      (function () {
-         emailjs.init("_hi0eg09Dya9qi5rF"); // Replace with your public key
-
-         const contactForm = document.getElementById("contact-form");
-         const submitButton = document.getElementById("submit-button");
-
-         contactForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            // Disable the submit button
-            submitButton.setAttribute("disabled", "true");
-
-            emailjs.sendForm("service_67u8idz", "template_nxeee59", contactForm)
-               .then(function (response) {
-                  console.log("Email sent successfully:", response);
-                  alert("Email sent successfully!");
-               }, function (error) {
-                  console.error("Error sending email:", error);
-                  alert("Error sending email.");
-               })
-               .finally(function () {
-                  // Re-enable the submit button
-                  submitButton.removeAttribute("disabled");
-               });
-         });
-      })();
-   </script>
   </body>
 </html>

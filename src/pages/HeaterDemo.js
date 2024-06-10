@@ -2,9 +2,9 @@ import React, { Fragment, useEffect, useState } from "react";
 import "../styles/HeaterDemo.css";
 import * as data from "../components/HeaterData.js";
 import { scrollToTop, InfoBubble } from "../components/Utils";
-import TypingEffect from "../components/TypingEffect.js"
+import TypingEffect from "../components/TypingEffect.js";
 import { ReactComponent as DownArrow } from "../assets/icons/downarrow.svg";
-import heaterBg from "../assets/images/heater_demo/SRtexture.png"
+import heaterBg from "../assets/images/heater_demo/SRtexture.png";
 
 function HeaterDemo() {
   const [limits, setLimits] = useState(data.defaultLimits);
@@ -95,12 +95,12 @@ function HeaterDemo() {
 
   //update limits based on state
   useEffect(() => {
-    let newLimits = {...data.defaultLimits};
+    let newLimits = { ...data.defaultLimits };
 
     if (tstat !== "None") {
       newLimits = { ...newLimits, ...data.tstatLimits };
-      newLimits.maxAmps = (voltage < 200) ? 12 : 8;
-    } 
+      newLimits.maxAmps = voltage < 200 ? 12 : 8;
+    }
     if (closure === "Adhesive") {
       newLimits.maxWattDensity = 5;
     }
@@ -108,45 +108,48 @@ function HeaterDemo() {
       newLimits.minVolt = 120;
       newLimits.maxVolt = 120;
     }
-    let maxWatts = Math.round(Math.min(area * newLimits.maxWattDensity, newLimits.maxAmps * voltage));
-    let currentMinWatts = (newLimits.minWatts > maxWatts) ? maxWatts : newLimits.minWatts;
-    
+    let maxWatts = Math.round(
+      Math.min(area * newLimits.maxWattDensity, newLimits.maxAmps * voltage)
+    );
+    let currentMinWatts =
+      newLimits.minWatts > maxWatts ? maxWatts : newLimits.minWatts;
+
     newLimits.maxWatts = maxWatts;
     newLimits.minWatts = currentMinWatts;
 
     setLimits(newLimits);
-  }, [closure,leads,sjoType,tstat,voltage,area]);
+  }, [closure, leads, sjoType, tstat, voltage, area]);
 
   //update vals if higher/lower than limits
   useEffect(() => {
-    setPower(prev => {
-      return Math.min(Math.max(limits.minWatts,prev),limits.maxWatts); 
-    })
-  }, [limits.minWatts,limits.maxWatts]);
+    setPower((prev) => {
+      return Math.min(Math.max(limits.minWatts, prev), limits.maxWatts);
+    });
+  }, [limits.minWatts, limits.maxWatts]);
 
   useEffect(() => {
-    setVoltage(prev => {
-      return Math.min(Math.max(limits.minVolt,prev),limits.maxVolt); 
-    })
-  }, [limits.minVolt,limits.maxVolt]);
+    setVoltage((prev) => {
+      return Math.min(Math.max(limits.minVolt, prev), limits.maxVolt);
+    });
+  }, [limits.minVolt, limits.maxVolt]);
 
   useEffect(() => {
-    setLength(prev => {
-      return Math.min(Math.max(limits.minLength,prev),limits.maxLength); 
-    })
-  }, [limits.minLength,limits.maxLength]);
+    setLength((prev) => {
+      return Math.min(Math.max(limits.minLength, prev), limits.maxLength);
+    });
+  }, [limits.minLength, limits.maxLength]);
 
   useEffect(() => {
-    setWidth(prev => {
-      return Math.min(Math.max(limits.minWidth,prev),limits.maxWidth); 
-    })
-  }, [limits.minWidth,limits.maxWidth]);
+    setWidth((prev) => {
+      return Math.min(Math.max(limits.minWidth, prev), limits.maxWidth);
+    });
+  }, [limits.minWidth, limits.maxWidth]);
 
   useEffect(() => {
-    setDiameter(prev => {
-      return Math.min(Math.max(limits.minDiam,prev),limits.maxDiam); 
-    })
-  }, [limits.minDiam,limits.maxDiam]);
+    setDiameter((prev) => {
+      return Math.min(Math.max(limits.minDiam, prev), limits.maxDiam);
+    });
+  }, [limits.minDiam, limits.maxDiam]);
 
   useEffect(() => {
     scrollToTop(); // scroll to top on load
@@ -154,13 +157,13 @@ function HeaterDemo() {
 
   return (
     <div id="configWrapper" className="container py-4 App fadeIn">
-        <h2 class="white pb-4">{TypingEffect("Product Creator Demo",80)}</h2>
+      <h2 class="white pb-4">{TypingEffect("Product Creator Demo", 80)}</h2>
       <div className="row">
         <div className="col-12">
           <div id="dimen" className="box" role="tablist">
             <h3 class="white">
-              <DownArrow />&nbsp;&nbsp;
-              Industrial Heater Configuration
+              <DownArrow />
+              &nbsp;&nbsp; Industrial Heater Configuration
             </h3>
             <div className="boxInfo p-3">
               <ButtonGroup
@@ -169,129 +172,151 @@ function HeaterDemo() {
                 title={"Shape"}
                 values={data.btnVals.shapeVals}
               />
-                <div id="rectInfo" className={`hidden ${shape === data.btnVals.shapeVals[0] ? 'show' : ''}`}>
-                  <Spinner
-                    stateVar={length}
-                    callback={lengthChange}
-                    min={limits.minLength}
-                    max={limits.maxLength}
-                    title={"Length"}
-                    units={"in."}
-                  />
-                  <Spinner
-                    stateVar={width}
-                    callback={widthChange}
-                    min={limits.minWidth}
-                    max={limits.maxWidth}
-                    title={"Width"}
-                    units={"in."}
-                  />
-                  <div className="row my-3">
-                    <div className="col-9 offset-3">
-                      <div className="row">
-                        <div className="col-11 g-0 offset-1">
-                          <input
-                            type="range"
-                            className="form-range"
-                            step=".25"
-                            min={limits.minLength}
-                            max={limits.maxLength}
-                            value={length}
-                            id="lengthRange"
-                            onChange={lengthChange}
-                          />
-                        </div>
+              <div
+                id="rectInfo"
+                className={`hidden ${
+                  shape === data.btnVals.shapeVals[0] ? "show" : ""
+                }`}
+              >
+                <Spinner
+                  stateVar={length}
+                  callback={lengthChange}
+                  min={limits.minLength}
+                  max={limits.maxLength}
+                  title={"Length"}
+                  units={"in."}
+                />
+                <Spinner
+                  stateVar={width}
+                  callback={widthChange}
+                  min={limits.minWidth}
+                  max={limits.maxWidth}
+                  title={"Width"}
+                  units={"in."}
+                />
+                <div className="row my-3">
+                  <div className="col-9 offset-3">
+                    <div className="row">
+                      <div className="col-11 g-0 offset-1">
+                        <input
+                          type="range"
+                          className="form-range"
+                          step=".25"
+                          min={limits.minLength}
+                          max={limits.maxLength}
+                          value={length}
+                          id="lengthRange"
+                          onChange={lengthChange}
+                        />
                       </div>
-                      <div className="row">
-                        <div className="col-1 g-0" id="verticalCol">
-                          <input
-                            type="range"
-                            className="form-range"
-                            step=".25"
-                            min={limits.minWidth}
-                            max={limits.maxWidth}
-                            value={width}
-                            id="verticalRange"
-                            onChange={widthChange}
-                          />
-                        </div>
-                        <div className="col-11 g-0" id="heaterIllustration">
-                          <div
-                            id="dimDiv"
-                            style={{
-                                backgroundImage: `url(${heaterBg})`,
-                              width: (length / limits.maxLength) * 100 + "%",
-                              height: (width / limits.maxWidth) * 100 + "%",
-                            }}
-                          />
-                        </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-1 g-0" id="verticalCol">
+                        <input
+                          type="range"
+                          className="form-range"
+                          step=".25"
+                          min={limits.minWidth}
+                          max={limits.maxWidth}
+                          value={width}
+                          id="verticalRange"
+                          onChange={widthChange}
+                        />
+                      </div>
+                      <div className="col-11 g-0" id="heaterIllustration">
+                        <div
+                          id="dimDiv"
+                          style={{
+                            backgroundImage: `url(${heaterBg})`,
+                            width: (length / limits.maxLength) * 100 + "%",
+                            height: (width / limits.maxWidth) * 100 + "%",
+                          }}
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
-                <div id="circleInfo" className={`hidden ${shape === data.btnVals.shapeVals[1] ? 'show' : ''}`}>
-                  <Spinner
-                    stateVar={diameter}
-                    callback={diamChange}
-                    min={limits.minDiam}
-                    max={limits.maxDiam}
-                    title={"Diameter"}
-                    units={"in."}
-                  />
-                  <div className="row my-3">
-                    <div className="col-9 offset-3">
-                      <div className="row">
-                        <div className="col-12 g-0">
-                          <input
-                            type="range"
-                            className="form-range"
-                            min={limits.minDiam}
-                            max={limits.maxDiam}
-                            value={diameter}
-                            onChange={diamChange}
-                            id="diamRange"
-                          />
-                        </div>
+              </div>
+              <div
+                id="circleInfo"
+                className={`hidden ${
+                  shape === data.btnVals.shapeVals[1] ? "show" : ""
+                }`}
+              >
+                <Spinner
+                  stateVar={diameter}
+                  callback={diamChange}
+                  min={limits.minDiam}
+                  max={limits.maxDiam}
+                  title={"Diameter"}
+                  units={"in."}
+                />
+                <div className="row my-3">
+                  <div className="col-9 offset-3">
+                    <div className="row">
+                      <div className="col-12 g-0">
+                        <input
+                          type="range"
+                          className="form-range"
+                          min={limits.minDiam}
+                          max={limits.maxDiam}
+                          value={diameter}
+                          onChange={diamChange}
+                          id="diamRange"
+                        />
                       </div>
-                      <div className="row">
-                        <div className="col-12 g-0" id="diamIllustration">
-                          <div
-                            id="diamDiv"
-                            style={{
-                                backgroundImage: `url(${heaterBg})`,
-                              height: (diameter / limits.maxDiam) * 100 + "%",
-                              width: (diameter / limits.maxDiam) * 100 + "%",
-                            }}
-                          />
-                        </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-12 g-0" id="diamIllustration">
+                        <div
+                          id="diamDiv"
+                          style={{
+                            backgroundImage: `url(${heaterBg})`,
+                            height: (diameter / limits.maxDiam) * 100 + "%",
+                            width: (diameter / limits.maxDiam) * 100 + "%",
+                          }}
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
-                <div id="otherInfo" className={`hidden ${shape === data.btnVals.shapeVals[2] ? 'show' : ''}`}>
-                  <div className="row my-3">
-                    <div className="col-9 offset-3">
-                      <input className="form-control" type="file" id="otherShapeUpload"/>
-                      <br />
-                      Please upload a file
-                      <InfoBubble color="whitesmoke" message="Accepted file extensions are: .gif, .png, .jpeg, .jpg, and .pdf" />
-                      &nbsp; that clearly shows the dimensions of your desired
-                      silicone rubber heater, along with any additional holes or
-                      cutouts you may require.
-                      <br />
-                      <br />
-                      We will not be able to instantly quote you a price for
-                      this heater, and instead will respond with an email quote
-                      in approximately one business day.
-                    </div>
+              </div>
+              <div
+                id="otherInfo"
+                className={`hidden ${
+                  shape === data.btnVals.shapeVals[2] ? "show" : ""
+                }`}
+              >
+                <div className="row my-3">
+                  <div className="col-9 offset-3">
+                    <input
+                      className="form-control"
+                      type="file"
+                      id="otherShapeUpload"
+                    />
+                    <br />
+                    Please upload a file
+                    <InfoBubble
+                      color="whitesmoke"
+                      message="Accepted file extensions are: .gif, .png, .jpeg, .jpg, and .pdf"
+                    />
+                    &nbsp; that clearly shows the dimensions of your desired
+                    silicone rubber heater, along with any additional holes or
+                    cutouts you may require.
+                    <br />
+                    <br />
+                    We will not be able to instantly quote you a price for this
+                    heater, and instead will respond with an email quote in
+                    approximately one business day.
                   </div>
                 </div>
+              </div>
             </div>
           </div>
           <div id="closeLeadsTstat" className="box" role="tablist">
             <h3 class="white">
-            <DownArrow />&nbsp;&nbsp;
-              Leads, Closures, and Thermostats
+              <DownArrow />
+              &nbsp;&nbsp; Leads, Closures, and Thermostats
             </h3>
             <div className="boxInfo p-3">
               <ButtonGroup
@@ -300,25 +325,28 @@ function HeaterDemo() {
                 title={"Leads"}
                 values={data.btnVals.leadsVals}
               />
-              <div className={`hidden ${leads === data.btnVals.leadsVals[2] ? 'show' : ''}`}>
-              <ButtonGroup 
+              <div
+                className={`hidden ${
+                  leads === data.btnVals.leadsVals[2] ? "show" : ""
+                }`}
+              >
+                <ButtonGroup
                   stateVar={sjoType}
                   callback={sjoTypeChange}
-                  title={"SJO Type"}
+                  title={"Plug"}
                   values={data.btnVals.sjoVals}
-                  showTitle={false}
+                  showTitle={true}
                 />
               </div>
               <Spinner
-                    stateVar={leadLength}
-                    callback={leadLengthChange}
-                    min={limits.minLeadLength}
-                    max={limits.maxLeadLength}
-                    title={"Lead Length"}
-                    units={"in."}
-                  />
-              
-                
+                stateVar={leadLength}
+                callback={leadLengthChange}
+                min={limits.minLeadLength}
+                max={limits.maxLeadLength}
+                title={"Length"}
+                units={"in."}
+              />
+
               <div className="row my-3 ">
                 <div className="col-9 offset-3">
                   <div className="row">
@@ -332,12 +360,14 @@ function HeaterDemo() {
                     <div className="col-6">
                       {data.btnInfo[leads].desc}
                       {data.btnInfo[leads].note !== "" && (
-                      <InfoBubble message={data.btnInfo[leads].note} color="whitesmoke" />
+                        <InfoBubble
+                          message={data.btnInfo[leads].note}
+                          color="whitesmoke"
+                        />
                       )}
                     </div>
-                    
                   </div>
-                  
+
                   <hr />
                 </div>
               </div>
@@ -348,53 +378,56 @@ function HeaterDemo() {
                 title={"Closure"}
                 values={data.btnVals.closureVals}
               />
-              
-                <div className={`row my-3 hidden ${closure !== "None" ? 'show' : ''}`}>
-                  <div className="col-9 offset-3">
-                    <div className="row">
-                      <div className="col-6">
-                        <img
-                          className="infoPic"
-                          src={data.btnInfo[closure].img}
-                          alt="Closure Pic"
-                        />
-                      </div>
-                      <div className="col-6">
-                        {data.btnInfo[closure].desc}
-                        {data.btnInfo[closure].note !== "" && (
-                      <InfoBubble message={data.btnInfo[closure].note} color="whitesmoke" />
-                      )}
-                      </div>
+
+              <div
+                className={`row my-3 hidden ${
+                  closure !== "None" ? "show" : ""
+                }`}
+              >
+                <div className="col-9 offset-3">
+                  <div className="row">
+                    <div className="col-6">
+                      <img
+                        className="infoPic"
+                        src={data.btnInfo[closure].img}
+                        alt="Closure Pic"
+                      />
                     </div>
-                    <hr />
+                    <div className="col-6">
+                      {data.btnInfo[closure].desc}
+                      {data.btnInfo[closure].note !== "" && (
+                        <InfoBubble
+                          message={data.btnInfo[closure].note}
+                          color="whitesmoke"
+                        />
+                      )}
+                    </div>
                   </div>
+                  <hr />
                 </div>
+              </div>
               <ButtonGroup
                 stateVar={tstat}
                 callback={tstatChange}
                 title={"Thermostat"}
                 values={data.btnVals.tstatVals}
               />
-              <div className={`hidden ${tstat !== "None" ? 'show' : ''}`}>
-              <div class="row my-3">
-              <div className="col-3 configTitle">
-                        <h5 >
-                          Thermostat Type:
-                        </h5>
-                       </div>
-                       <div className="col-9"> 
-                        <TstatTypes
-                          callback={tstatTypeChange}
-                          options={data.btnInfo[tstat].options}
-                        />
-                      </div>
+              <div className={`hidden ${tstat !== "None" ? "show" : ""}`}>
+                <div class="row my-3">
+                  <div className="col-3 configTitle">
+                    <h5>Type:</h5>
+                  </div>
+                  <div className="col-9">
+                    <TstatTypes
+                      callback={tstatTypeChange}
+                      options={data.btnInfo[tstat].options}
+                    />
+                  </div>
+                </div>
               </div>
-                      
-              </div>
-              <div className={`hidden ${tstat !== "None" ? 'show' : ''}`}>
-              <div className={`row my-3`}>
+              <div className={`hidden ${tstat !== "None" ? "show" : ""}`}>
+                <div class="row my-3">
                   <div className="col-9 offset-3">
-                    
                     <div className="row center infoRow my-3">
                       <div className="col-6">
                         Low Temp (Heater On):
@@ -423,15 +456,17 @@ function HeaterDemo() {
                       <div className="col-6">
                         {data.btnInfo[tstat].desc}
                         {data.btnInfo[tstat].note !== "" && (
-                      <InfoBubble message={data.btnInfo[tstat].note} color="whitesmoke" />
-                      )}
+                          <InfoBubble
+                            message={data.btnInfo[tstat].note}
+                            color="whitesmoke"
+                          />
+                        )}
                       </div>
                     </div>
                     <hr />
                   </div>
                 </div>
               </div>
-                
               <ButtonGroup
                 stateVar={tcouple}
                 callback={tcoupleChange}
@@ -442,20 +477,26 @@ function HeaterDemo() {
           </div>
           <div id="powerVoltage" className="box" role="tablist">
             <h3 class="white">
-            <DownArrow />&nbsp;&nbsp;
-              Power, Voltage, and Submit
+              <DownArrow />
+              &nbsp;&nbsp; Power, Voltage, and Submit
             </h3>
             <div className="boxInfo p-3">
               <div className="row infoRow center">
                 <div className="col-6">
                   Max Watt Density
-                  <InfoBubble color="whitesmoke" message="The durability and performance of a heater depends on selecting the appropriate wattage. Exceeding the maximum allowable watt density for the specified heater size will result in premature heater failure." />
+                  <InfoBubble
+                    color="whitesmoke"
+                    message="The durability and performance of a heater depends on selecting the appropriate wattage. Exceeding the maximum allowable watt density for the specified heater size will result in premature heater failure."
+                  />
                   <hr />
                   <h5>{limits.maxWattDensity}</h5>&nbsp;W/in<sup>2</sup>
                 </div>
                 <div className="col-6">
                   Max Amperage
-                  <InfoBubble color="whitesmoke" message="Amps = Watts / Volts. Silicone rubber heaters have a limit of 15 amps for a single circuit. More circuits are available on request. Thermostats are also limited in the amperage they can tolerate at any particular voltage." />
+                  <InfoBubble
+                    color="whitesmoke"
+                    message="Amps = Watts / Volts. Silicone rubber heaters have a limit of 15 amps for a single circuit. More circuits are available on request. Thermostats are also limited in the amperage they can tolerate at any particular voltage."
+                  />
                   <hr />
                   <h5>{limits.maxAmps}</h5>&nbsp;Amps
                 </div>
@@ -545,7 +586,7 @@ function ButtonGroup(props) {
               <input
                 type="radio"
                 class="btn-check"
-                name={title+"radio"}
+                name={title + "radio"}
                 id={title + index}
                 checked={stateVar === value}
                 onChange={(event) => callback(event.target.value)}
@@ -611,7 +652,10 @@ function TstatTypes(props) {
   }, [options]);
 
   return (
-    <select className="form-select" onChange={(event) => callback(event.target.value)}>
+    <select
+      className="form-select"
+      onChange={(event) => callback(event.target.value)}
+    >
       {options.map((option, index) => (
         <option key={option.value + index} value={option.value}>
           {option.name}

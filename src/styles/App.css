@@ -402,12 +402,7 @@ button {
   transform: scale(1.03); /* Zoom effect on hover */
 }
 
-.text-bg h1 {
-  color: #fff;
-  font-size: 78px;
-  line-height: 96px;
-  font-weight: 800;
-}
+
 
 .big-button {
   border-radius: 0.5rem;
@@ -433,6 +428,12 @@ button {
   background-color: #ff283f;
   color: #fff;
   cursor: pointer;
+}
+h1.white {
+  color: #fff;
+  font-size: 78px;
+  line-height: 96px;
+  font-weight: 800;
 }
 
 h2.white {
@@ -477,23 +478,33 @@ h3.white {
   text-decoration: underline !important;
 }
 
-.my_work {
+.work_pic {
   margin-bottom: 30px;
 }
 
-.my_work figure {
+.work_pic figure {
   margin: 0px;
 }
 
-.my_work figure img {
+.work_pic figure img {
   transition: ease-in all 0.2s;
   width: 100%;
   border-radius: 0.5rem;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Apply a box-shadow to create a shadow effect */
 }
 
-.my_work figure img:hover {
+.work_pic figure img:hover {
   transform: scale(0.99);
+}
+.work-col {
+  display: grid;
+  margin-bottom: 30px;
+}
+.tech_bubble{
+  padding:0 10px 0 10px;
+  margin: 0 10px 10px 0;
+  background-color: #430919;
+  border-radius: 0.5rem;
 }
 
 /** end work section **/
@@ -506,20 +517,8 @@ h3.white {
   text-align: center;
 }
 
-.multipurpose {
+p {
   text-align: left;
-}
-
-.multipurpose h3 {
-  color: #b3b3b3;
-  font-size: 80px;
-  line-height: 90px;
-  padding-bottom: 0;
-  font-weight: bold;
-}
-
-.multipurpose p,
-.work p {
   color: whitesmoke;
   font-size: 17px;
   line-height: 30px;
@@ -533,7 +532,7 @@ h3.white {
   border-radius: 0.5rem;
 }
 
-.contact-links ul li img {
+.contact-links img {
   margin-right: 20px;
   width: 40px;
 }
@@ -549,11 +548,11 @@ h3.white {
   padding-bottom: 0;
 }
 
-.contact-links ul li a {
+.contact-links a {
   color: #e70139;
 }
 
-.contact-links ul li a:hover {
+.contact-links a:hover {
   color: #000;
 }
 
@@ -617,27 +616,18 @@ h3.white {
     font-size: 38px;
     line-height: 41px;
   }
-  .multipurpose h3 {
-    font-size: 70px;
-    line-height: 90px;
-  }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
   .bann-img-col {
     height: auto;
   }
-  .text-bg a,
-  #submit-button {
+  .big-button {
     max-width: 250px;
   }
   h2.white {
     font-size: 30px;
     line-height: 41px;
-  }
-  .multipurpose h3 {
-    font-size: 58px;
-    line-height: 70px;
   }
 }
 
@@ -648,11 +638,10 @@ h3.white {
   .header {
     padding: 30px 0px;
   }
-  .text-bg a,
-  #submit-button {
+  .big-button {
     max-width: 250px;
   }
-  .text-bg h1 {
+  h1.white {
     font-size: 57px;
     line-height: 81px;
   }
@@ -660,11 +649,8 @@ h3.white {
     font-size: 30px;
     line-height: 41px;
   }
-  .multipurpose h3 {
-    font-size: 52px;
-    line-height: 74px;
-  }
-  .multipurpose p {
-    padding-top: 10px;
+  .contact-links ul li {
+    font-size: 20px;
+    line-height: 25px;
   }
 }

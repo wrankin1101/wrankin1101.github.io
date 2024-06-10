@@ -18,7 +18,6 @@ const App = () => {
         <Route path="/index" element={<Home />} />
         <Route path="/commentwriter" element={<CommentWriter />} />
         <Route path="/heaterdemo" element={<HeaterDemo />} />
-        {/*<Route path="/about" element={<About />} />*/}
       </Routes>
       <ScrollToAnchor />
     </Layout>
