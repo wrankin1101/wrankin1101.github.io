@@ -143,169 +143,94 @@ function Home() {
             <h3 class="white">Apps</h3>
           </div>
           <div class="row">
-            <div class="col-md-6 work-col d-flex-column">
-              <div class="work_pic">
-                <figure>
-                  <Link to="/commentwriter">
-                    <img src={commentWriter} alt="#" />
-                  </Link>
-                </figure>
-              </div>
-              <Link to="/commentwriter" className="work_link">
-                <h3>Student Comment Writer</h3>
-              </Link>
-              <p>
-                Created an intuitive comment writing application to increase
-                quarterly reporting speed for teachers by up to 50%
-              </p>
-              <p class="tech_used d-flex flex-wrap pt-5 align-self-end">
-                  <div class="tech_bubble">
-                  React.js
-                  </div>
-                  <div class="tech_bubble">
-                  Bootstrap
-                  </div>
-                  <div class="tech_bubble">
-                  jQuery
-                  </div>
-                  <div class="tech_bubble">
-                  HTML/CSS
-                  </div>
-              </p>
-            </div>
-            <div class="col-md-6 work-col d-flex-column">
-              <div class="work_pic">
-                <figure>
-                  <a
-                    href="https://www.oemheaters.com/configurators/sr/config.aspx"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img src={oem} alt="#" />
-                  </a>
-                </figure>
-              </div>
-              <Link to="/heaterdemo" className="work_link">
-                <h3>Custom Product Creator App</h3>
-              </Link>
-              <p>
-                Created jQuery apps that allowed users to create custom
-                products, which increased sales and created leads.
-              </p>
-              <p>Recently redone in React.js as a learning exercise.</p>
-              <p class="tech_used d-flex flex-wrap pt-5 align-self-end">
-                  <div class="tech_bubble">
-                  React.js
-                  </div>
-                  <div class="tech_bubble">
-                  Bootstrap
-                  </div>
-                  <div class="tech_bubble">
-                  jQuery
-                  </div>
-                  <div class="tech_bubble">
-                  jQueryUI
-                  </div>
-                  <div class="tech_bubble">
-                  HTML/CSS
-                  </div>
-              </p>
-            </div>
+            <WorkCol
+              title="Student Comment Writer"
+              img={commentWriter}
+              link="/commentwriter"
+              gitHub="https://github.com/wrankin1101/comment-writer"
+              techUsed={["React.js", "Bootstrap", "jQuery", "HTML/CSS"]}
+              desc={
+                <p>
+                  Created an intuitive comment writing application to increase
+                  quarterly reporting speed for teachers by up to 50%
+                </p>
+              }
+            />
+            <WorkCol
+              title="Custom Product Creator"
+              img={oem}
+              link="/heaterdemo"
+              gitHub="https://github.com/wrankin1101/configure-heater"
+              techUsed={[
+                "React.js",
+                "Bootstrap",
+                "jQuery",
+                "jQueryUI",
+                "HTML/CSS",
+              ]}
+              desc={
+                <>
+                  <p>
+                    Created web apps that allowed users to create custom
+                    products, which increased sales and created leads.
+                  </p>
+                  <p>Recently redone in React.js as a learning exercise.</p>
+                  <p>
+                    You can view original jQuery apps{" "}
+                    <a
+                      href="https://www.oemheaters.com/configurators/sr/config.aspx"
+                      target="_blank"
+                      class="work_link"
+                      rel="noreferrer"
+                    >
+                      here
+                    </a>
+                    .
+                  </p>
+                </>
+              }
+            />
           </div>
           <div class="pb-5">
             <h3 class="white">Websites</h3>
           </div>
           <div class="row">
-            <div class="col-md-6 work-col d-flex-column">
-              <div class="work_pic">
-                <figure>
+            <WorkCol
+              title="English Academy Website"
+              img={funway}
+              link="https://funway.co.kr"
+              isExternalLink={true}
+              techUsed={["CreatorLink", "HTML/CSS"]}
+              desc={
+                <p>
+                  Worked with business owner to design and create a website
+                  using the full-service builder{" "}
                   <a
-                    href="https://funway.co.kr"
+                    href="https://creatorlink.com"
                     target="_blank"
+                    class="work_link"
                     rel="noreferrer"
                   >
-                    <img src={funway} alt="#" />
+                    CreatorLink
                   </a>
-                </figure>
-              </div>
-              <a
-                href="https://funway.co.kr"
-                target="_blank"
-                class="work_link"
-                rel="noreferrer"
-              >
-                <h3>English Academy Website - 2022</h3>
-              </a>
-              <p>
-                Worked with business owner to design and create a website using
-                a full-service builder. This led to an increase in recruitment.
-              </p>
-              <p class="tech_used d-flex flex-wrap pt-5 align-self-end">
-                  <div class="tech_bubble">
-                  <a
-                  href="https://creatorlink.com"
-                  target="_blank"
-                  class="work_link"
-                  rel="noreferrer"
-                >
-                  CreatorLink
-                </a>
-                  </div>
-                  <div class="tech_bubble">
-                  HTML/CSS
-                  </div>
-              </p>
-            </div>
-            <div class="col-md-6 work-col d-flex-column">
-              <div class="flex-grow-1">
-              <div class="work_pic">
-                <figure>
-                  <a
-                    href="https://www.funwaycity.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img src={funwayCity} alt="#" />
-                  </a>
-                </figure>
-              </div>
-              <a
-                href="https://www.funwaycity.com/"
-                target="_blank"
-                class="work_link"
-                rel="noreferrer"
-              >
-                <h3>English Academy Student Dashboard - 2023</h3>
-              </a>
-
-              <p>
-                Utilized Wix and Wix Velo to create a dashboard for students and
-                parents to track progress in an intuitive responsive design.
-              </p>
-              </div>
-              <p class="tech_used d-flex flex-wrap pt-5 align-self-end" >
-                  <div class="tech_bubble">
-                  <a
-                  href="https://wix.com"
-                  target="_blank"
-                  class="work_link"
-                  rel="noreferrer"
-                >
-                  Wix
-                </a>
-                  </div>
-                  <div class="tech_bubble">
-                  Wix Velo
-                  </div>
-                  <div class="tech_bubble">
-                  Javascript
-                  </div>
-                  <div class="tech_bubble">
-                  HTML/CSS
-                  </div>
-              </p>
-              
-            </div>
+                  . This led to an increase in recruitment and parent
+                  interaction.
+                </p>
+              }
+            />
+            <WorkCol
+              title="English Academy Student Dashboard"
+              img={funwayCity}
+              link=""
+              techUsed={["Wix", "Wix Velo", "Javascript", "HTML/CSS"]}
+              desc={
+                <p>
+                  Utilized Wix and Wix Velo to create a dashboard for students
+                  and parents to track progress in an intuitive responsive
+                  design.
+                </p>
+              }
+            />
           </div>
         </div>
       </section>
@@ -428,53 +353,65 @@ function Home() {
   );
 }
 function WorkCol(props) {
-  const {
-    title,
-    img,
-    link,
-    externalLink = "",
-    techUsed,
-    desc,
-  } = props;
-  
+  const { title, img, link, isExternalLink = false, gitHub = "" , techUsed, desc } = props;
+
   return (
     <div class="col-md-6 work-col d-flex-column">
-              <div class="work_pic">
-                <figure>
-                  <a
-                    href="https://funway.co.kr"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img src={img} alt="#" />
-                  </a>
-                </figure>
-              </div>
-              <a
-                href="https://funway.co.kr"
-                target="_blank"
-                class="work_link"
-                rel="noreferrer"
-              >
-                <h3>{title}</h3>
-              </a>
-              {desc}
-              <p class="tech_used d-flex flex-wrap pt-5 align-self-end">
-                  <div class="tech_bubble">
-                  <a
-                  href="https://creatorlink.com"
-                  target="_blank"
-                  class="work_link"
-                  rel="noreferrer"
-                >
-                  CreatorLink
-                </a>
-                  </div>
-                  <div class="tech_bubble">
-                  HTML/CSS
-                  </div>
-              </p>
-            </div>
+      <div>
+        <div class="work_pic">
+          {link !== "" ? (
+            <Link
+              to={link}
+              target={isExternalLink ? "_blank" : "_self"}
+              rel="noreferrer"
+            >
+              <img src={img} alt="#" />
+            </Link>
+          ) : (
+            <img src={img} alt="#" />
+          )}
+        </div>
+        <div class="d-flex flex-wrap">
+          <div className="flex-grow-1 py-2">
+
+          
+        {link !== "" ? (
+          <Link
+            to={link}
+            className="work_link"
+            target={isExternalLink ? "_blank" : "_self"}
+            rel="noreferrer"
+          >
+            <h3>{title}</h3>
+          </Link>
+        ) : (
+          <h3>{title}</h3>
+        )}
+        </div>
+        { gitHub !== "" && (
+          <Link
+          to={gitHub}
+          className="github_bubble mx-4"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <GitHubSvg />
+        </Link>
+        )}
+        </div>
+        
+
+        {desc}
+      </div>
+
+      <div class="tech_used d-flex flex-wrap pt-5 align-self-end">
+        {techUsed.map((tech, index) => (
+          <div key={index} class="tech_bubble">
+            {tech}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 

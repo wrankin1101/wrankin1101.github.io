@@ -105,9 +105,11 @@ ol {
 
 p {
   margin: 0px;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 24px;
+  text-align: left;
+  color: whitesmoke;
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 400;
 }
 
 a {
@@ -189,7 +191,6 @@ button {
   background-color: grey; /* Customize color as needed */
   margin: 60px; /* Adjust margin as needed */
   position: relative;
-  z-index: 1;
 }
 
 .fade-in-element { /* js fade in, set to .visible */
@@ -256,6 +257,7 @@ button {
   background-color: #6f0720;
 }
 .cylinder {
+  z-index: -1;
   width: 70px; /* Adjust width */
   height: 600px; /* Adjust height */
   border-radius: 35px;
@@ -288,18 +290,20 @@ button {
 }
 
 /*-- navigation--*/
-
-.navbar {
-  z-index: 1;
+.navbar-nav .dropdown-menu {
+  background-color: black;
+  box-shadow: 4px 4px 8px 3px black;
+  width: max-content;
+  border-left: whitesmoke 2px solid;
+  margin-left: 30px;
 }
-
 .nav-link {
-  text-align: right;
   padding: 0.5rem 25px !important;
   color: #fff;
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
+  background: none;
 }
 
 .nav-link:focus,
@@ -309,8 +313,7 @@ button {
 
 .active > .nav-link,
 .nav-link.active,
-.nav-link.show,
-.show > .nav-link {
+.nav-link.show {
   color: #e70139;
 }
 .hamburger {
@@ -463,37 +466,33 @@ h3.white {
 .work {
   padding-top: 90px;
 }
-.work h2 {
+.work-col h2, .work-col h3 {
+  font-size: 21px;
   color: #b3b3b3;
 }
 
 .work_link,
 .work_link h3 {
+  display: inline-block;
   color: #e70139;
   transition: ease-in all 0.2s;
 }
 .work_link:hover,
 .work_link h3:hover {
   color: whitesmoke;
-  text-decoration: underline !important;
 }
 
 .work_pic {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-.work_pic figure {
-  margin: 0px;
-}
-
-.work_pic figure img {
+.work_pic img {
   transition: ease-in all 0.2s;
   width: 100%;
   border-radius: 0.5rem;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Apply a box-shadow to create a shadow effect */
 }
 
-.work_pic figure img:hover {
+.work_pic img:hover {
   transform: scale(0.99);
 }
 .work-col {
@@ -505,6 +504,25 @@ h3.white {
   margin: 0 10px 10px 0;
   background-color: #430919;
   border-radius: 0.5rem;
+  color: whitesmoke;
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 400;
+}
+.github_bubble{
+  padding:7px;
+  width:45px;
+  height: 45px;
+  background-color: #430919;
+  border-radius: 100%;
+  color: whitesmoke;
+}
+.github_bubble:hover{
+  color: #e70139;
+}
+.github_bubble svg{
+  width:30px;
+  height: 30px;
 }
 
 /** end work section **/
@@ -515,14 +533,6 @@ h3.white {
   padding-bottom: 60px;
   padding-top: 90px;
   text-align: center;
-}
-
-p {
-  text-align: left;
-  color: whitesmoke;
-  font-size: 17px;
-  line-height: 30px;
-  font-weight: 400;
 }
 
 .contact-links {
@@ -560,7 +570,6 @@ p {
   background: #6f0720;
   margin-top: 90px;
   position: relative;
-  z-index:1;
 }
 
 .copyright p {
@@ -585,6 +594,7 @@ p {
 }
 .input-group-text{
   background:#CAD6E2;
+  height: 100%;
 }
 .infoBubble{
   width:20px;

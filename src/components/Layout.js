@@ -31,40 +31,64 @@ const Layout = ({ children }) => {
     <>
       <header>
         <div className="container px-4">
-          <nav className="navbar navbar-expand-md p">
-            <Link className="navbar-brand" to="/home">
-              <div className="logo">
-                <img src={logo} alt="#" style={{ width: "64px" }} />
+          <nav className="navbar navbar-expand-md">
+            <div class="container-fluid">
+              <Link className="navbar-brand" to="/home">
+                <div className="logo">
+                  <img src={logo} alt="#" style={{ width: "64px" }} />
+                </div>
+              </Link>
+              <button
+                className="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="navbar-toggler-icon">
+                  <div className="hamburger"></div>
+                  <div className="hamburger"></div>
+                  <div className="hamburger"></div>
+                </span>
+              </button>
+              <div
+                className="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
+                <ul className="navbar-nav me-auto">
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/home#work">
+                      My Work
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/home#contact">
+                      Contact
+                    </Link>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <button
+                      class="nav-link dropdown-toggle"
+                      id="navbarDropdown"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Demos
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <Link className="nav-link" to="/commentwriter">
+                        Comment Writer
+                      </Link>
+                      <Link className="nav-link" to="/heaterdemo">
+                        Custom Product Creator
+                      </Link>
+                    </ul>
+                  </li>
+                  
+                </ul>
               </div>
-            </Link>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarToggle"
-              aria-controls="navbarToggle"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon">
-                <div className="hamburger"></div>
-                <div className="hamburger"></div>
-                <div className="hamburger"></div>
-              </span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarToggle">
-              <ul className="navbar-nav mr-auto">
-                <li className="nav-item">
-                  <Link className="nav-link" to="/home#work">
-                    My Work
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/home#contact">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
             </div>
           </nav>
         </div>
@@ -93,14 +117,14 @@ const Layout = ({ children }) => {
                   &copy; {currentYear} Will Rankin. All rights reserved.
                 </p>
                 <p className="py-2">
-                <a
+                  <a
                     href="https://html.design/demo/bluene/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     Template
-                  </a>
-                  {" "}by{" "}
+                  </a>{" "}
+                  by{" "}
                   <a
                     href="https://html.design/"
                     target="_blank"

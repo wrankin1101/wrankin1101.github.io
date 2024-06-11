@@ -307,10 +307,13 @@ function CommentWriter() {
     });
     setComment(comment.trim());
     setCopied("");
-    scrollToTop();
     //set cookie
     Cookies.set("state", JSON.stringify(state), { expires: 365 });
   }, [state]);
+
+  useEffect(() => {
+    scrollToTop(); // scroll to top on load
+  }, []);
 
   return (
     <div className="commentWriterApp fadeIn">
