@@ -18,6 +18,7 @@ import { ReactComponent as GitHubSvg } from "../assets/icons/github.svg";
 import { ReactComponent as LinkedInSvg } from "../assets/icons/linkedin.svg";
 import { ReactComponent as MailSvg } from "../assets/icons/mail.svg";
 import { ReactComponent as PdfSvg } from "../assets/icons/pdf.svg";
+import { ReactComponent as TelegramSvg } from "../assets/icons/telegram.svg";
 import { useEffect, useState } from "react";
 
 function Home() {
@@ -108,6 +109,15 @@ function Home() {
                       rel="noreferrer"
                     >
                       <LinkedInSvg />
+                    </a>
+                  </div>
+                  <div class="p-3">
+                    <a
+                      href="https://t.me/chillwill749"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <TelegramSvg />
                     </a>
                   </div>
                   <div class="p-3">

@@ -189,7 +189,7 @@ button {
   border: none;
   height: 2px; /* Customize height as needed */
   background-color: grey; /* Customize color as needed */
-  margin: 60px; /* Adjust margin as needed */
+  margin: 110px 90px; /* Adjust margin as needed */
   position: relative;
 }
 
@@ -463,9 +463,6 @@ h3.white {
 
 /** work section **/
 
-.work {
-  padding-top: 90px;
-}
 .work-col h2, .work-col h3 {
   font-size: 21px;
   color: #b3b3b3;
@@ -514,11 +511,13 @@ h3.white {
   width:45px;
   height: 45px;
   background-color: #430919;
+  box-shadow: 0px 0px 10px 2px black;
   border-radius: 100%;
   color: whitesmoke;
 }
 .github_bubble:hover{
   color: #e70139;
+  transform: translate(2px, 2px);
 }
 .github_bubble svg{
   width:30px;
@@ -529,11 +528,6 @@ h3.white {
 
 /** footer **/
 
-.contact {
-  padding-bottom: 60px;
-  padding-top: 90px;
-  text-align: center;
-}
 
 .contact-links {
   background: #fff;
