@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5c06a06d.css",
-    "main.js": "/static/js/main.e2f17bb6.js",
+    "main.css": "/static/css/main.450eddce.css",
+    "main.js": "/static/js/main.c7f3342a.js",
     "static/js/453.ffa6cdb7.chunk.js": "/static/js/453.ffa6cdb7.chunk.js",
     "static/media/funway_color.png": "/static/media/funway_color.25244bcf9e1b9c813f14.png",
     "static/media/notriangle.png": "/static/media/notriangle.ed6f5c2466f76771d191.png",
@@ -23,14 +23,15 @@
     "static/media/square-github.svg": "/static/media/square-github.91b7df2cdd1c47e0783de5a9cc2f049d.svg",
     "index.html": "/index.html",
     "static/media/mail.svg": "/static/media/mail.8a0c0e5ac8de64d645e89418821fa79c.svg",
+    "static/media/telegram.svg": "/static/media/telegram.39ed786cddb8151c762b4b43322f18b3.svg",
     "static/media/info.svg": "/static/media/info.0211a7e276a5ae403288a4f9716611de.svg",
     "static/media/downarrow.svg": "/static/media/downarrow.47444c61dc6cf31a52d1f7fee060788b.svg",
-    "main.5c06a06d.css.map": "/static/css/main.5c06a06d.css.map",
-    "main.e2f17bb6.js.map": "/static/js/main.e2f17bb6.js.map",
+    "main.450eddce.css.map": "/static/css/main.450eddce.css.map",
+    "main.c7f3342a.js.map": "/static/js/main.c7f3342a.js.map",
     "453.ffa6cdb7.chunk.js.map": "/static/js/453.ffa6cdb7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5c06a06d.css",
-    "static/js/main.e2f17bb6.js"
+    "static/css/main.450eddce.css",
+    "static/js/main.c7f3342a.js"
   ]
 }
