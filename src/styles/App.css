@@ -581,6 +581,7 @@ h3.white {
 
 .copyright a {
   color: #fff;
+  text-decoration: underline !important;
 }
 
 .copyright a:hover {

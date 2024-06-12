@@ -196,22 +196,20 @@ function HeaterDemo() {
                 />
                 <div className="row my-3">
                   <div className="col-9 offset-3">
-                    <div className="row">
-                      <div className="col-11 g-0 offset-1">
-                        <input
-                          type="range"
-                          className="form-range"
-                          step=".25"
-                          min={limits.minLength}
-                          max={limits.maxLength}
-                          value={length}
-                          id="lengthRange"
-                          onChange={lengthChange}
-                        />
-                      </div>
+                    <div className="d-flex">
+                      <input
+                        type="range"
+                        className="form-range"
+                        step=".25"
+                        min={limits.minLength}
+                        max={limits.maxLength}
+                        value={length}
+                        id="lengthRange"
+                        onChange={lengthChange}
+                      />
                     </div>
-                    <div className="row">
-                      <div className="col-1 g-0" id="verticalCol">
+                    <div className="d-flex">
+                      <div id="verticalCol">
                         <input
                           type="range"
                           className="form-range"
@@ -223,7 +221,7 @@ function HeaterDemo() {
                           onChange={widthChange}
                         />
                       </div>
-                      <div className="col-11 g-0" id="heaterIllustration">
+                      <div id="heaterIllustration">
                         <div
                           id="dimDiv"
                           style={{
@@ -350,14 +348,14 @@ function HeaterDemo() {
               <div className="row my-3 ">
                 <div className="col-9 offset-3">
                   <div className="row">
-                    <div className="col-6">
+                    <div className="col-sm-6">
                       <img
                         className="infoPic"
                         src={data.btnInfo[leads].img}
                         alt="Leads Pic"
                       />
                     </div>
-                    <div className="col-6">
+                    <div className="col-sm-6">
                       {data.btnInfo[leads].desc}
                       {data.btnInfo[leads].note !== "" && (
                         <InfoBubble
@@ -386,14 +384,14 @@ function HeaterDemo() {
               >
                 <div className="col-9 offset-3">
                   <div className="row">
-                    <div className="col-6">
+                    <div className="col-sm-6">
                       <img
                         className="infoPic"
                         src={data.btnInfo[closure].img}
                         alt="Closure Pic"
                       />
                     </div>
-                    <div className="col-6">
+                    <div className="col-sm-6">
                       {data.btnInfo[closure].desc}
                       {data.btnInfo[closure].note !== "" && (
                         <InfoBubble
@@ -428,32 +426,36 @@ function HeaterDemo() {
               <div className={`hidden ${tstat !== "None" ? "show" : ""}`}>
                 <div class="row my-3">
                   <div className="col-9 offset-3">
-                    <div className="row center infoRow my-3">
+                    <div className="row center infoRow mt-3">
                       <div className="col-6">
-                        Low Temp (Heater On):
-                        <hr />
-                        <h5 className="me-1">{tstatLow}</h5>
-                        {tstatLow !== "Room Temp" && (
-                          <span>
-                            F<sup>o</sup>
-                          </span>
-                        )}
+                        <span class="d-inline-block">Low Temp</span>{" "}
+                        <span class="d-inline-block">(Heater On):</span>
                       </div>
                       <div className="col-6">
-                        High Temp (Heater Off):
+                        <span class="d-inline-block">High Temp</span>{" "}
+                        <span class="d-inline-block">(Heater Off):</span>
+                      </div>
+                    </div>
+                    <div className="row center infoRow mb-3">
+                      <div className="col-6">
+                        <hr />
+                        <h5 className="me-1">{tstatLow}</h5>
+                        {tstatLow !== "Room Temp" && (<span>F<sup>o</sup></span>)}
+                      </div>
+                      <div className="col-6">
                         <hr />
                         <h5 className="me-1">{tstatHigh}</h5>F<sup>o</sup>
                       </div>
                     </div>
                     <div className="row">
-                      <div className="col-6">
+                      <div className="col-sm-6">
                         <img
                           className="infoPic"
                           src={data.btnInfo[tstat].img}
                           alt="Closure Pic"
                         />
                       </div>
-                      <div className="col-6">
+                      <div className="col-sm-6">
                         {data.btnInfo[tstat].desc}
                         {data.btnInfo[tstat].note !== "" && (
                           <InfoBubble
@@ -580,7 +582,7 @@ function ButtonGroup(props) {
     <div className={`row my-3 buttonRow`}>
       <div className="col-3 configTitle">{showTitle && <h5>{title}:</h5>}</div>
       <div className="col-9">
-        <div className="btn-group" role="group">
+        <div className="btn-group flex-wrap" role="group">
           {values.map((value, index) => (
             <Fragment key={title + index}>
               <input

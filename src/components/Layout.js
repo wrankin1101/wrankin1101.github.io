@@ -4,6 +4,7 @@ import { scrollToTop } from "../components/Utils";
 //images
 import triangle from "../assets/images/trianglecropped.png";
 import logo from "../assets/images/icon192.png";
+import { ReactComponent as GitHubSvg } from "../assets/icons/github.svg";
 import { Link } from "react-router-dom";
 
 const Layout = ({ children }) => {
@@ -117,16 +118,20 @@ const Layout = ({ children }) => {
                   &copy; {currentYear} Will Rankin. All rights reserved.
                 </p>
                 <p className="py-2">
-                  <a
-                    href="https://html.design/demo/bluene/"
+                <a
+                    href="https://github.com/wrankin1101/wrankin1101.github.io"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Template
-                  </a>{" "}
+                    <GitHubSvg className="mb-1" width="20"/>
+                    {" "}Source code
+                  </a>
+                  .{" "}
+                  
+                    Template{" "}
                   by{" "}
                   <a
-                    href="https://html.design/"
+                    href="https://html.design/demo/bluene/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
