@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { scrollToTop } from "../components/Utils";
 
 //images
-import triangle from "../assets/images/trianglecropped.png";
-import logo from "../assets/images/icon192.png";
+import triangle from "../assets/images/triangle_cropped.png";
+import logo from "../assets/images/logo192.png";
 import { ReactComponent as GitHubSvg } from "../assets/icons/github.svg";
 import { Link } from "react-router-dom";
 

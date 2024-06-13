@@ -1,25 +1,30 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import TypingEffect from "../components/TypingEffect";
 import emailjs from "@emailjs/browser";
 
-//images
-import spinTriangle from "../assets/images/triangle of justice_skinny.png";
-import headshot from "../assets/images/notriangle.png";
+//headshot images
+import spinTriangle from "../assets/images/triangle_skinny.png";
+import headshot from "../assets/images/headshot.png";
+
+//work images
 import commentWriter from "../assets/images/recent_work/commentwriter_color.png";
 import funway from "../assets/images/recent_work/funway_color.png";
 import funwayCity from "../assets/images/recent_work/funwaycity_color.png";
 import oem from "../assets/images/recent_work/oemheaters_color.png";
-import call from "../assets/images/call.png";
-import linkedIn from "../assets/images/linkedin.svg";
-import mail from "../assets/images/gmail.png";
-import github from "../assets/images/square-github.svg";
 
+//icons
+import call from "../assets/icons/call.png";
+import mail from "../assets/icons/gmail.png";
+
+import github from "../assets/icons/github_square.svg";
+import linkedIn from "../assets/icons/linkedin_square.svg";
 import { ReactComponent as GitHubSvg } from "../assets/icons/github.svg";
 import { ReactComponent as LinkedInSvg } from "../assets/icons/linkedin.svg";
 import { ReactComponent as MailSvg } from "../assets/icons/mail.svg";
 import { ReactComponent as PdfSvg } from "../assets/icons/pdf.svg";
 import { ReactComponent as TelegramSvg } from "../assets/icons/telegram.svg";
-import { useEffect, useState } from "react";
+
 
 function Home() {
   const [disabled, setDisabled] = useState(false);
@@ -84,12 +89,11 @@ function Home() {
                   <p class="text">
                     Software developer turned traveler, eager to return to
                     development. <br />
-                    If you'd like to collaborate, please send me an email or
-                    reach out via{" "}
-                    <a class="work_link" href="mailto:wrankin1101@gmail.com">
-                      email
-                    </a>{" "}
-                    or socials!
+                    If you'd like to collaborate, please reach out via{" "}
+                    <Link className="work_link" to="/home#contact">
+                    Quick Contact
+                    </Link>{" "}
+                    or use the links below!
                   </p>
                 </div>
                 <div class="socials d-flex flex-row p-2 mb-4">
@@ -366,7 +370,7 @@ function WorkCol(props) {
   const { title, img, link, isExternalLink = false, gitHub = "" , techUsed, desc } = props;
 
   return (
-    <div class="col-md-6 work-col d-flex-column">
+    <div class="col-md-6 work-col d-flex-column px-4">
       <div>
         <div class="work_pic">
           {link !== "" ? (

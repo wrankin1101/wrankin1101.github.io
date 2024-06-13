@@ -189,7 +189,7 @@ button {
   border: none;
   height: 2px; /* Customize height as needed */
   background-color: grey; /* Customize color as needed */
-  margin: 110px 90px; /* Adjust margin as needed */
+  margin: 110px 10vw; /* Adjust margin as needed */
   position: relative;
 }
 
