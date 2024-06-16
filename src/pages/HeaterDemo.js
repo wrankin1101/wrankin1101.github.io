@@ -347,7 +347,7 @@ function HeaterDemo() {
 
               <div className="row my-3 ">
                 <div className="col-9 offset-3">
-                  <div className="row">
+                  <div className="row align-items-center">
                     <div className="col-sm-6">
                       <img
                         className="infoPic"
@@ -355,7 +355,7 @@ function HeaterDemo() {
                         alt="Leads Pic"
                       />
                     </div>
-                    <div className="col-sm-6">
+                    <div className="col-sm-6 pe-4">
                       {data.btnInfo[leads].desc}
                       {data.btnInfo[leads].note !== "" && (
                         <InfoBubble
@@ -383,7 +383,7 @@ function HeaterDemo() {
                 }`}
               >
                 <div className="col-9 offset-3">
-                  <div className="row">
+                  <div className="row align-items-center">
                     <div className="col-sm-6">
                       <img
                         className="infoPic"
@@ -391,7 +391,7 @@ function HeaterDemo() {
                         alt="Closure Pic"
                       />
                     </div>
-                    <div className="col-sm-6">
+                    <div className="col-sm-6 pe-4">
                       {data.btnInfo[closure].desc}
                       {data.btnInfo[closure].note !== "" && (
                         <InfoBubble
@@ -447,7 +447,7 @@ function HeaterDemo() {
                         <h5 className="me-1">{tstatHigh}</h5>F<sup>o</sup>
                       </div>
                     </div>
-                    <div className="row">
+                    <div className="row align-items-center">
                       <div className="col-sm-6">
                         <img
                           className="infoPic"
@@ -455,7 +455,7 @@ function HeaterDemo() {
                           alt="Closure Pic"
                         />
                       </div>
-                      <div className="col-sm-6">
+                      <div className="col-sm-6 pe-4">
                         {data.btnInfo[tstat].desc}
                         {data.btnInfo[tstat].note !== "" && (
                           <InfoBubble
