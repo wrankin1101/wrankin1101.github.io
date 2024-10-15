@@ -265,14 +265,6 @@ function Home() {
               <div class="contact-links">
                 <ul>
                   <li>
-                    <img src={call} alt="#" />
-                    +1 952 454 2310
-                  </li>
-                  <li>
-                    <img src={call} alt="#" />
-                    +82 010 2962 5589
-                  </li>
-                  <li>
                     <a
                       href="mailto:wrankin1101@gmail.com"
                       target="_blank"
