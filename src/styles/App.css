@@ -137,22 +137,6 @@ img {
   outline: 0;
 }
 
-.btn-custom {
-  margin-top: 20px;
-  background-color: transparent !important;
-  border: 2px solid #ddd;
-  padding: 12px 40px;
-  font-size: 16px;
-}
-
-.lead {
-  font-size: 18px;
-  line-height: 30px;
-  color: #767676;
-  margin: 0;
-  padding: 0;
-}
-
 .form-control:focus {
   border-color: #ffffff !important;
   box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
@@ -193,6 +177,7 @@ button {
   position: relative;
 }
 
+/*-- fading --*/
 .fade-in-element { /* js fade in, set to .visible */
   opacity: 0;
   transition: opacity 1s ease-in-out;
@@ -215,7 +200,9 @@ button {
     opacity: 1;
   }
 }
+/*-- end fading --*/
 
+/*-- background --*/
 #back-to-top {
   position: fixed;
   bottom: 0;
@@ -288,6 +275,7 @@ button {
     opacity: 0; /* Fade out at the end */
   }
 }
+/*-- end background --*/
 
 /*-- navigation--*/
 .navbar-nav .dropdown-menu {
@@ -405,8 +393,6 @@ button {
   transform: scale(1.03); /* Zoom effect on hover */
 }
 
-
-
 .big-button {
   border-radius: 0.5rem;
   font-size: 20px;
@@ -459,10 +445,9 @@ h3.white {
   max-width: 1170px;
 }
 
-/** banner section **/
+/** end banner section **/
 
 /** work section **/
-
 .work-col h2, .work-col h3 {
   font-size: 21px;
   color: #b3b3b3;
@@ -523,12 +508,9 @@ h3.white {
   width:30px;
   height: 30px;
 }
-
 /** end work section **/
 
 /** footer **/
-
-
 .contact-links {
   background: #fff;
   padding: 31px;
@@ -581,9 +563,9 @@ h3.white {
 .copyright a:hover {
   color: #000;
 }
-
 /** end footer **/
-/** comment Writer **/
+
+/** comment writer **/
 .factorGroup,#studentInfoDiv,#generateDiv{
   background:#e8e9ee;
 }
@@ -605,14 +587,21 @@ h3.white {
 
 /*--------------------------------------------------------------------- Responsive ---------------------------------------------------------------------*/
 
-/*------------------------------------------------------------------- 991px x 768px ---------------------------------------------------------------------*/
-
-@media (min-width: 1200px) and (max-width: 1342px) {
+/*---xl-breakpoint---*/
+@media (min-width: 1200px){
+  h2.white {
+    min-height: 110px;
+  }
 }
 
+/*---lg-breakpoint---*/
 @media (min-width: 992px) and (max-width: 1199px) {
+  h2.white {
+    min-height: 110px;
+  }
 }
 
+/*---md-breakpoint---*/
 @media (min-width: 768px) and (max-width: 991px) {
   .bann-img-col {
     height: auto;
@@ -620,22 +609,36 @@ h3.white {
   h2.white {
     font-size: 38px;
     line-height: 41px;
+    text-align: center;
+  }
+  h1.white {
+    text-align: center;
+  }
+  .text{
+    text-align: center;
   }
 }
 
+/*---sm-breakpoint---*/
 @media (min-width: 576px) and (max-width: 767px) {
   .bann-img-col {
     height: auto;
   }
-  .big-button {
-    max-width: 250px;
-  }
   h2.white {
     font-size: 30px;
     line-height: 41px;
+    text-align: center;
+    min-height: 82px;
+  }
+  h1.white {
+    text-align: center;
+  }
+  .text{
+    text-align: center;
   }
 }
 
+/*---extra small (no breakpoint)---*/
 @media (max-width: 575px) {
   .bann-img-col {
     height: auto;
@@ -649,10 +652,17 @@ h3.white {
   h1.white {
     font-size: 57px;
     line-height: 81px;
+    text-align: center;
   }
   h2.white {
     font-size: 30px;
     line-height: 41px;
+    text-align: center;
+    min-height: 82px;
+  }
+  .text{
+    text-align: center;
+    font-size:16px;
   }
   .contact-links ul li {
     font-size: 20px;

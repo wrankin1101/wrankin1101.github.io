@@ -64,8 +64,8 @@ function Home() {
               <h1 class="white m-2">{TypingEffect("Will Rankin", 80)}</h1>
             </div>
 
-            <div class="bann-img-col col-lg-5 col-md-12">
-              <div class="bann-img m-5">
+            <div class="bann-img-col col-lg-5 col-md-12 ">
+              <div class="bann-img my-5 mx-lg-5 mx-auto">
                 <div class="triangle">
                   <img src={spinTriangle} alt="#" className="fadeIn" />
                 </div>
@@ -77,26 +77,21 @@ function Home() {
 
             <div class="col-lg-7">
               <div class="p-2">
-                <h2
-                  class="mb-5 white"
-                  style={{
-                    minHeight: "110px",
-                  }}
-                >
+                <h2 class="mb-5 white">
                   {TypingEffect("Full-Stack Developer, Teacher, Explorer", 80)}
                 </h2>
                 <div class="mt-5 mb-3">
                   <p class="text">
-                    Software developer turned traveler, eager to return to
-                    development. <br />
-                    If you'd like to collaborate, please reach out via{" "}
+                  Experienced software developer with a global perspective, <br/>ready to re-engage in impactful tech projects. <br />
+                  Connect via {" "}
                     <Link className="work_link" to="/home#contact">
                     Quick Contact
                     </Link>{" "}
-                    or use the links below!
+                    or the links below.
                   </p>
                 </div>
-                <div class="socials d-flex flex-row p-2 mb-4">
+                <div class="d-flex">
+                <div class="socials d-inline-flex p-2 mb-4 mx-lg-0 mx-auto">
                   <div class="p-3">
                     <a
                       href="https://github.com/wrankin1101"
@@ -134,15 +129,18 @@ function Home() {
                     </a>
                   </div>
                 </div>
-                <a
+                </div>
+                <div class="row d-flex px-4">
+                  <a
                   target="_blank"
-                  class="big-button"
+                  class="big-button mx-lg-0 mx-auto"
                   href="https://drive.google.com/file/d/155HY4my4mZl1IAD_-V7XuTdNIjqKEVki/view?usp=sharing"
                   rel="noreferrer"
                 >
                   <PdfSvg />
                   &nbsp;&nbsp;Resume
                 </a>
+                </div>
               </div>
             </div>
           </div>
