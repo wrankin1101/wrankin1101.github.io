@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 
-function TypingEffect(text, delay = 80, commaPause = 3000){
+function TypingEffect(text, delay = 50, commaPause = 3000){
     const [typedText, setTypedText] = useState("");
     let textIndex = useRef(0);
     

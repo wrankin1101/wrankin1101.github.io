@@ -4,8 +4,7 @@ import TypingEffect from "../components/TypingEffect";
 import emailjs from "@emailjs/browser";
 
 //headshot images
-import spinTriangle from "../assets/images/triangle_skinny.png";
-import headshot from "../assets/images/headshot.png";
+import headshot from "../assets/images/headshot_circle.png";
 
 //work images
 import commentWriter from "../assets/images/recent_work/commentwriter_color.png";
@@ -25,9 +24,19 @@ import { ReactComponent as MailSvg } from "../assets/icons/mail.svg";
 import { ReactComponent as PdfSvg } from "../assets/icons/pdf.svg";
 import { ReactComponent as TelegramSvg } from "../assets/icons/telegram.svg";
 
+import RotatingIcons from "../components/RotatingIcons";
+import { SiReact, SiBootstrap, SiJquery, SiHtml5, SiCss3, SiJavascript, SiWix, } from "react-icons/si";
 
 function Home() {
   const [disabled, setDisabled] = useState(false);
+
+  const floatingIcons = [ 
+    <SiReact />,
+    <SiJquery />,
+    <SiHtml5 />,
+    <SiCss3 />,
+    <SiJavascript />
+  ];
 
   const sendEmail = () => {
     // Disable the submit button
@@ -61,16 +70,14 @@ function Home() {
         <div class="container px-4">
           <div class="row d-flex">
             <div class="col-lg-7 align-self-center">
-              <h1 class="white m-2">{TypingEffect("Will Rankin", 80)}</h1>
+              <h1 class="white m-2">{TypingEffect("Will Rankin", 50)}</h1>
             </div>
 
             <div class="bann-img-col col-lg-5 col-md-12 ">
-              <div class="bann-img my-5 mx-lg-5 mx-auto">
-                <div class="triangle">
-                  <img src={spinTriangle} alt="#" className="fadeIn" />
-                </div>
+              <div class="bann-img my-5 mx-lg-5 mx-auto fadeIn">
+                <RotatingIcons duration={60} icons={floatingIcons} />
                 <figure>
-                  <img src={headshot} alt="#" className="fadeIn" />
+                  <img src={headshot} alt="#"/>
                 </figure>
               </div>
             </div>
@@ -78,11 +85,12 @@ function Home() {
             <div class="col-lg-7">
               <div class="p-2">
                 <h2 class="mb-5 white">
-                  {TypingEffect("Full-Stack Developer, Teacher, Explorer", 80)}
+                  {TypingEffect("Full-Stack Developer, Teacher, Explorer", 50, 750)}
                 </h2>
                 <div class="mt-5 mb-3">
                   <p class="text">
-                  Experienced software developer with a global perspective, <br/>ready to re-engage in impactful tech projects. <br />
+                  Experienced developer with a global perspective, 
+                  <br/>ready to re-engage in impactful tech projects. <br />
                   Connect via {" "}
                     <Link className="work_link" to="/home#contact">
                     Quick Contact
