@@ -7,7 +7,7 @@ import TypingEffect from "../components/TypingEffect";
 function CommentWriter() {
   // Define the default state values here
   const defaultState = {
-    name: "Steven",
+    name: "Will",
     isMale: true,
     chkrandom: true,
     factors: [
@@ -18,12 +18,12 @@ function CommentWriter() {
             title: "Participation",
             comment:
               "#name has good participation in class discussions, and voluntarily answers questions without needing to be called on.",
-            checked: false,
+            checked: true,
           },
           {
             title: "Speaking",
             comment: "His speaking is strong for his level.",
-            checked: false,
+            checked: true,
           },
           {
             title: "Reading Comprehension",
@@ -73,7 +73,7 @@ function CommentWriter() {
             title: "Reading Comprehension",
             comment:
               "He seems to struggle with understanding the reading and answering questions.",
-            checked: false,
+            checked: true,
           },
           {
             title: "Work Ethic",
@@ -85,7 +85,7 @@ function CommentWriter() {
             title: "Focus",
             comment:
               "I often find #name not paying attention during the class and getting distracted.",
-            checked: false,
+            checked: true,
           },
           {
             title: "Vocab Score",
@@ -109,7 +109,14 @@ function CommentWriter() {
       },
       {
         title: "Final:",
-        list: [{ title: "Plan For Improvement", comment: "", checked: false }],
+        list: [
+          {
+            title: "Plan For Improvement",
+            comment:
+              "#name is a great student when it comes to his participation and speaking. Unfortunately he seems to struggle with reading comprehension and paying attention in class. I will focus more on engaging him in class activities and getting him to practice his reading comprehension.",
+            checked: true,
+          },
+        ],
       },
     ],
   };
@@ -319,7 +326,7 @@ function CommentWriter() {
     <div className="commentWriterApp fadeIn">
       <div className="container py-4">
         <div class="d-flex py-4">
-          <h2 class="white">{TypingEffect("Comment Writer Demo", 80)}</h2>
+          <h2 class="white">{TypingEffect("Comment Writer", 80)}</h2>
         </div>
         <div className="row">
           <div className="col-md mb-4">
@@ -466,6 +473,7 @@ function CommentWriter() {
                 rows="10"
                 value={commentOut}
                 readOnly={true}
+                style={{ height: "420px" }}
               ></textarea>
             </div>
           </div>

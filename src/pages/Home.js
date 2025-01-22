@@ -25,17 +25,25 @@ import { ReactComponent as PdfSvg } from "../assets/icons/pdf.svg";
 import { ReactComponent as TelegramSvg } from "../assets/icons/telegram.svg";
 
 import RotatingIcons from "../components/RotatingIcons";
-import { SiReact, SiBootstrap, SiJquery, SiHtml5, SiCss3, SiJavascript, SiWix, } from "react-icons/si";
+import {
+  SiReact,
+  SiBootstrap,
+  SiJquery,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiWix,
+} from "react-icons/si";
 
 function Home() {
   const [disabled, setDisabled] = useState(false);
 
-  const floatingIcons = [ 
-    <SiReact />,
-    <SiJquery />,
-    <SiHtml5 />,
-    <SiCss3 />,
-    <SiJavascript />
+  const floatingIcons = [
+    <SiReact title="React.js" />,
+    <SiJquery title="jQuery" />,
+    <SiHtml5 title="HTML" />,
+    <SiCss3 title="CSS" />,
+    <SiJavascript title="Javascript" />,
   ];
 
   const sendEmail = () => {
@@ -75,9 +83,9 @@ function Home() {
 
             <div class="bann-img-col col-lg-5 col-md-12 ">
               <div class="bann-img my-5 mx-lg-5 mx-auto fadeIn">
-                <RotatingIcons duration={60} icons={floatingIcons} />
+                <RotatingIcons duration={120} icons={floatingIcons} />
                 <figure>
-                  <img src={headshot} alt="#"/>
+                  <img src={headshot} alt="#" />
                 </figure>
               </div>
             </div>
@@ -85,69 +93,74 @@ function Home() {
             <div class="col-lg-7">
               <div class="p-2">
                 <h2 class="mb-5 white">
-                  {TypingEffect("Full-Stack Developer, Teacher, Explorer", 50, 750)}
+                  {TypingEffect(
+                    "Full-Stack Developer, Teacher, Explorer",
+                    50,
+                    750
+                  )}
                 </h2>
                 <div class="mt-5 mb-3">
                   <p class="text">
-                  Experienced developer with a global perspective, 
-                  <br/>ready to re-engage in impactful tech projects. <br />
-                  Connect via {" "}
+                    Experienced developer with a global perspective,
+                    <br />
+                    ready to re-engage in impactful tech projects. <br />
+                    Connect via{" "}
                     <Link className="work_link" to="/home#contact">
-                    Quick Contact
+                      Quick Contact
                     </Link>{" "}
                     or the links below.
                   </p>
                 </div>
                 <div class="d-flex">
-                <div class="socials d-inline-flex p-2 mb-4 mx-lg-0 mx-auto">
-                  <div class="p-3">
-                    <a
-                      href="https://github.com/wrankin1101"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <GitHubSvg />
-                    </a>
+                  <div class="socials d-inline-flex p-2 mb-4 mx-lg-0 mx-auto">
+                    <div class="p-3">
+                      <a
+                        href="https://github.com/wrankin1101"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <GitHubSvg />
+                      </a>
+                    </div>
+                    <div class="p-3">
+                      <a
+                        href="https://www.linkedin.com/in/will-rankn"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <LinkedInSvg />
+                      </a>
+                    </div>
+                    <div class="p-3">
+                      <a
+                        href="https://t.me/chillwill749"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <TelegramSvg />
+                      </a>
+                    </div>
+                    <div class="p-3">
+                      <a
+                        href="mailto:wrankin1101@gmail.com"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <MailSvg />
+                      </a>
+                    </div>
                   </div>
-                  <div class="p-3">
-                    <a
-                      href="https://www.linkedin.com/in/will-rankn"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <LinkedInSvg />
-                    </a>
-                  </div>
-                  <div class="p-3">
-                    <a
-                      href="https://t.me/chillwill749"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <TelegramSvg />
-                    </a>
-                  </div>
-                  <div class="p-3">
-                    <a
-                      href="mailto:wrankin1101@gmail.com"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <MailSvg />
-                    </a>
-                  </div>
-                </div>
                 </div>
                 <div class="row d-flex px-4">
                   <a
-                  target="_blank"
-                  class="big-button mx-lg-0 mx-auto"
-                  href="https://drive.google.com/file/d/155HY4my4mZl1IAD_-V7XuTdNIjqKEVki/view?usp=sharing"
-                  rel="noreferrer"
-                >
-                  <PdfSvg />
-                  &nbsp;&nbsp;Resume
-                </a>
+                    target="_blank"
+                    class="big-button mx-lg-0 mx-auto"
+                    href="https://drive.google.com/file/d/155HY4my4mZl1IAD_-V7XuTdNIjqKEVki/view?usp=sharing"
+                    rel="noreferrer"
+                  >
+                    <PdfSvg />
+                    &nbsp;&nbsp;Resume
+                  </a>
                 </div>
               </div>
             </div>
@@ -365,7 +378,15 @@ function Home() {
   );
 }
 function WorkCol(props) {
-  const { title, img, link, isExternalLink = false, gitHub = "" , techUsed, desc } = props;
+  const {
+    title,
+    img,
+    link,
+    isExternalLink = false,
+    gitHub = "",
+    techUsed,
+    desc,
+  } = props;
 
   return (
     <div class="col-md-6 work-col d-flex-column px-4">
@@ -378,6 +399,9 @@ function WorkCol(props) {
               rel="noreferrer"
             >
               <img src={img} alt="#" />
+              <div className="overlay">
+                <button>View</button>
+              </div>
             </Link>
           ) : (
             <img src={img} alt="#" />
@@ -385,33 +409,30 @@ function WorkCol(props) {
         </div>
         <div class="d-flex flex-wrap">
           <div className="flex-grow-1 py-2">
-
-          
-        {link !== "" ? (
-          <Link
-            to={link}
-            className="work_link"
-            target={isExternalLink ? "_blank" : "_self"}
-            rel="noreferrer"
-          >
-            <h3>{title}</h3>
-          </Link>
-        ) : (
-          <h3>{title}</h3>
-        )}
+            {link !== "" ? (
+              <Link
+                to={link}
+                className="work_link"
+                target={isExternalLink ? "_blank" : "_self"}
+                rel="noreferrer"
+              >
+                <h3>{title}</h3>
+              </Link>
+            ) : (
+              <h3>{title}</h3>
+            )}
+          </div>
+          {gitHub !== "" && (
+            <Link
+              to={gitHub}
+              className="github_bubble mx-4"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <GitHubSvg />
+            </Link>
+          )}
         </div>
-        { gitHub !== "" && (
-          <Link
-          to={gitHub}
-          className="github_bubble mx-4"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <GitHubSvg />
-        </Link>
-        )}
-        </div>
-        
 
         {desc}
       </div>

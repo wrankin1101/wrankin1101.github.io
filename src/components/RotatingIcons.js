@@ -5,7 +5,7 @@ const RotatingIcons = ({ duration, icons}) => {
   const offset = 11;
   const getRotation = (index) => (index * degreeWidth) - offset;
   return (
-    <div className="circle-container">
+    <div className="circle-container" style={{'--duration': `${duration}s`}}>
       {icons.map((icon, index) => (
         <div key={index} className="circle-item" style={{ transform: `rotate(${getRotation(index)}deg)` }}>
           <div
