@@ -76,7 +76,7 @@ const Layout = ({ children }) => {
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      Demos
+                      Apps
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <Link className="nav-link" to="/commentwriter">

@@ -624,7 +624,7 @@ h3.white {
 }
 /*---- end work section ----*/
 
-/*---- footer ----*/
+/*---- contact ----*/
 .contact-links {
   background: #fff;
   padding: 31px;
@@ -655,7 +655,9 @@ h3.white {
 .contact-links a:hover {
   color: #000;
 }
+/*---- end contact section ----*/
 
+/*---- footer ----*/
 .copyright {
   background: var(--color-secondary);
   margin-top: 90px;

@@ -9,7 +9,7 @@ function CommentWriter() {
   const defaultState = {
     name: "Will",
     isMale: true,
-    chkrandom: true,
+    chkrandom: false,
     factors: [
       {
         title: "Strengths:",
