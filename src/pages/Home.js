@@ -33,6 +33,7 @@ import {
   SiCss3,
   SiJavascript,
   SiWix,
+  SiUpwork
 } from "react-icons/si";
 
 function Home() {
@@ -138,6 +139,15 @@ function Home() {
                         rel="noreferrer"
                       >
                         <TelegramSvg />
+                      </a>
+                    </div>
+                    <div class="p-3">
+                      <a
+                        href="https://www.upwork.com/freelancers/~0173009a7c75a7ccc8"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <SiUpwork />
                       </a>
                     </div>
                     <div class="p-3">
