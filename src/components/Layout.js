@@ -111,7 +111,7 @@ const Layout = ({ children }) => {
 
       <footer>
         <div className="copyright">
-          <div className="container p-3">
+          <div className="container mx-5 py-3">
             <div className="row">
               <div className="col-md-12">
                 <p className="py-2">
@@ -128,8 +128,8 @@ const Layout = ({ children }) => {
                   </a>
                   .{" "}
                   
-                    Template{" "}
-                  by{" "}
+                    Inspiration{" "}
+                  from{" "}
                   <a
                     href="https://html.design/demo/bluene/"
                     target="_blank"

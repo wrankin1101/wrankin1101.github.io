@@ -76,32 +76,44 @@ function Home() {
     <>
       {/*  banner  */}
       <section class="banner_main pt-5 fadeIn">
-        <div class="container px-4">
+        <div class="container px-5">
           <div class="row d-flex">
-            <div class="col-lg-7 align-self-center">
-              <h1 class="white m-2">{TypingEffect("Will Rankin", 50)}</h1>
-            </div>
-
-            <div class="bann-img-col col-lg-5 col-md-12 ">
-              <div class="bann-img my-5 mx-lg-5 mx-auto fadeIn">
-                <RotatingIcons duration={120} icons={floatingIcons} />
-                <figure>
-                  <img src={headshot} alt="#" />
-                </figure>
-              </div>
-            </div>
-
-            <div class="col-lg-7">
-              <div class="p-2">
-                <h2 class="mb-5 white">
+            <div class="col-lg-6 align-self-center">
+              <h1 class="my-2 white">{TypingEffect("Will Rankin", 50)}</h1>
+              <h2 class="my-lg-5 my-4 white">
                   {TypingEffect(
                     "Full-Stack Developer, Teacher, Explorer",
                     50,
                     750
                   )}
                 </h2>
-                <div class="mt-5 mb-3">
-                  <p class="text">
+            </div>
+
+            <div class="bann-img-col col-lg-6 col-md-12 ">
+              <div class="bann-img my-5 mx-auto fadeIn">
+                <RotatingIcons duration={120} icons={floatingIcons} />
+                <figure>
+                  <img src={headshot} alt="#" />
+                </figure>
+              </div>
+              <div class="row d-flex px-4 my-5">
+                  <a
+                    target="_blank"
+                    class="big-button mx-auto"
+                    href="https://drive.google.com/file/d/155HY4my4mZl1IAD_-V7XuTdNIjqKEVki/view?usp=sharing"
+                    rel="noreferrer"
+                  >
+                    <PdfSvg />
+                    &nbsp;&nbsp;Resume
+                  </a>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="p-2">
+                
+                <div class="my-4">
+                  <p class="hero-text">
                     Experienced developer with a global perspective,
                     <br />
                     ready to re-engage in impactful tech projects. <br />
@@ -113,7 +125,7 @@ function Home() {
                   </p>
                 </div>
                 <div class="d-flex">
-                  <div class="socials d-inline-flex p-2 mb-4 mx-lg-0 mx-auto">
+                  <div class="socials d-inline-flex p-2 mx-auto">
                     <div class="p-3">
                       <a
                         href="https://github.com/wrankin1101"
@@ -161,17 +173,6 @@ function Home() {
                     </div>
                   </div>
                 </div>
-                <div class="row d-flex px-4">
-                  <a
-                    target="_blank"
-                    class="big-button mx-lg-0 mx-auto"
-                    href="https://drive.google.com/file/d/155HY4my4mZl1IAD_-V7XuTdNIjqKEVki/view?usp=sharing"
-                    rel="noreferrer"
-                  >
-                    <PdfSvg />
-                    &nbsp;&nbsp;Resume
-                  </a>
-                </div>
               </div>
             </div>
           </div>
@@ -180,7 +181,7 @@ function Home() {
       {/*  end banner  */}
       {/*  work  */}
       <section id="work" class="work fadeIn">
-        <div class="container px-4">
+        <div class="container px-5">
           <div class="row spacer"></div>
           <div class="pb-5">
             <h3 class="white">Apps</h3>
@@ -213,11 +214,11 @@ function Home() {
               ]}
               desc={
                 <>
-                  <p>
+                  <p class="mb-2">
                     Created web apps that allowed users to create custom
                     products, which increased sales and created leads.
                   </p>
-                  <p>Recently redone in React.js as a learning exercise.</p>
+                  <p class="mb-2">Recently redone in React.js as a learning exercise.</p>
                   <p>
                     You can view original jQuery apps{" "}
                     <a
@@ -280,7 +281,7 @@ function Home() {
       {/*  end work  */}
       {/*   contact  */}
       <section id="contact" class="contact fadeIn">
-        <div class="container px-4">
+        <div class="container px-5">
           <div class="row spacer"></div>
           <div class="row">
             <div class="col-md-6"></div>
@@ -435,7 +436,7 @@ function WorkCol(props) {
           {gitHub !== "" && (
             <Link
               to={gitHub}
-              className="github_bubble mx-4"
+              className="github_bubble ml-auto"
               target="_blank"
               rel="noreferrer"
             >

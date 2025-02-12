@@ -344,8 +344,12 @@ button {
   color: #e70139;
   transform: scale(1.1);
 }
-
+.hideletter {
+  color: transparent;
+  display: inline;
+}
 .typeletter {
+  color: auto;
   animation: typeSimulate 0.3s linear forwards;
   display: inline;
 }
@@ -500,14 +504,16 @@ h1.white {
   font-size: 78px;
   line-height: 96px;
   font-weight: 800;
+  text-align: center;
 }
 
 h2.white {
-  font-size: 45px;
+  font-size: 43px;
   color: white;
   line-height: 55px;
   font-weight: 800;
   padding: 0;
+  text-align: center;
 }
 h3.white {
   text-align: left;
@@ -517,7 +523,9 @@ h3.white {
   font-weight: 800;
   padding: 0;
 }
-
+.hero-text {
+  text-align: center;
+}
 .container {
   max-width: 1170px;
 }
@@ -604,13 +612,14 @@ h3.white {
   font-size: 17px;
   line-height: 30px;
   font-weight: 400;
+  box-shadow: 3px 3px 5px black;
 }
 .github_bubble{
   padding:7px;
   width:45px;
   height: 45px;
   background-color: var(--color-dark);
-  box-shadow: 0px 0px 10px 2px black;
+  box-shadow: 3px 3px 5px black;
   border-radius: 100%;
 }
 .github_bubble:hover{
@@ -705,16 +714,12 @@ h3.white {
 
 /*---- xl-breakpoint ----*/
 @media (min-width: 1200px){
-  h2.white {
-    min-height: 110px;
-  }
+  
 }
 
 /*---- lg-breakpoint ----*/
 @media (min-width: 992px) and (max-width: 1199px) {
-  h2.white {
-    min-height: 110px;
-  }
+  
 }
 
 /*---- md-breakpoint ----*/
@@ -725,13 +730,6 @@ h3.white {
   h2.white {
     font-size: 38px;
     line-height: 41px;
-    text-align: center;
-  }
-  h1.white {
-    text-align: center;
-  }
-  .text{
-    text-align: center;
   }
 }
 
@@ -743,14 +741,6 @@ h3.white {
   h2.white {
     font-size: 30px;
     line-height: 41px;
-    text-align: center;
-    min-height: 82px;
-  }
-  h1.white {
-    text-align: center;
-  }
-  .text{
-    text-align: center;
   }
 }
 
@@ -768,16 +758,12 @@ h3.white {
   h1.white {
     font-size: 57px;
     line-height: 81px;
-    text-align: center;
   }
   h2.white {
     font-size: 30px;
     line-height: 41px;
-    text-align: center;
-    min-height: 82px;
   }
-  .text{
-    text-align: center;
+  .hero-text{
     font-size:16px;
   }
   .contact-links ul li {
