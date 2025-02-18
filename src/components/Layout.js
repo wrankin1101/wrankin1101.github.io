@@ -101,7 +101,7 @@ const Layout = ({ children }) => {
       <div id="cylinder3" className="cylinder"></div>
       <div
         id="back-to-top"
-        className={`fade-in-element ${backToTop ? "visible" : ""}`}
+        className={`m-2 m-sm-3 fade-in-element ${backToTop ? "visible" : ""}`}
         onClick={scrollToTop}
       >
         <img alt="back to top" src={triangle} />
@@ -110,8 +110,8 @@ const Layout = ({ children }) => {
       <main>{children}</main>
 
       <footer>
-        <div className="copyright">
-          <div className="container mx-5 py-3">
+        <section className="copyright">
+          <div className="container py-3 px-5">
             <div className="row">
               <div className="col-md-12">
                 <p className="py-2">
@@ -141,7 +141,7 @@ const Layout = ({ children }) => {
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </footer>
     </>
   );

@@ -221,10 +221,9 @@ button {
   right: 0;
   background: var(--color-dark);
   border-radius: 100%;
-  box-shadow: 3px 3px 5px var(--color-dark);
+  box-shadow: 3px 3px 5px black;
   height: 50px;
   width: 50px;
-  margin: 20px;
   cursor: pointer;
   transition: all 0.5s ease; /* Smooth transition effect */
   z-index: 2;
@@ -641,9 +640,13 @@ h3.white {
   border-radius: 0.5rem;
 }
 
-.contact-links img {
+.contact-icons {
   margin-right: 20px;
   width: 40px;
+}
+
+.contact-links a {
+  color: #e70139;
 }
 
 .contact-links ul li {
@@ -655,10 +658,6 @@ h3.white {
 
 .contact-links ul li:last-child {
   padding-bottom: 0;
-}
-
-.contact-links a {
-  color: #e70139;
 }
 
 .contact-links a:hover {
@@ -764,10 +763,37 @@ h3.white {
     line-height: 41px;
   }
   .hero-text{
-    font-size:16px;
+    font-size:15px;
   }
   .contact-links ul li {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 25px;
+  }
+  .contact-icons {
+    width: 25px;
+    margin-right: 10px;
+  }
+  .socials svg {
+    width: 25px;
+    height: 25px;
+  }
+  .spacer {
+    margin: 70px 10vw;
+  }
+  .work-col h2, .work-col h3 {
+    font-size: 20px;
+  }
+  .github_bubble{
+    padding:5px;
+    width:35px;
+    height: 35px;
+  }
+  .github_bubble svg{
+    width:25px;
+    height: 25px;
+  }
+  #back-to-top {
+    height: 35px;
+    width: 35px;
   }
 }

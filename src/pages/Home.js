@@ -46,6 +46,13 @@ function Home() {
     <SiCss3 title="CSS" />,
     <SiJavascript title="Javascript" />,
   ];
+  const socialLinks = [
+    { icon: <GitHubSvg />, url: "https://github.com/wrankin1101"},
+    { icon: <LinkedInSvg />, url: "https://www.linkedin.com/in/will-rankn" },
+    { icon: <TelegramSvg />, url: "https://t.me/chillwill749" },
+    { icon: <SiUpwork />, url: "https://www.upwork.com/freelancers/~0173009a7c75a7ccc8" },
+    { icon: <MailSvg />, url: "mailto:mailto:wrankin1101@gmail.com" },
+  ];
 
   const sendEmail = () => {
     // Disable the submit button
@@ -75,7 +82,7 @@ function Home() {
   return (
     <>
       {/*  banner  */}
-      <section class="banner_main pt-5 fadeIn">
+      <section id="banner fadeIn">
         <div class="container px-5">
           <div class="row d-flex">
             <div class="col-lg-6 align-self-center">
@@ -110,12 +117,11 @@ function Home() {
             </div>
 
             <div class="col-lg-6">
-              <div class="p-2">
                 
                 <div class="my-4">
                   <p class="hero-text">
-                    Experienced developer with a global perspective,
-                    <br />
+                    Experienced developer with a global perspective, {""}
+                    <br class="d-none d-sm-block"/>
                     ready to re-engage in impactful tech projects. <br />
                     Connect via{" "}
                     <Link className="work_link" to="/home#contact">
@@ -125,55 +131,8 @@ function Home() {
                   </p>
                 </div>
                 <div class="d-flex">
-                  <div class="socials d-inline-flex p-2 mx-auto">
-                    <div class="p-3">
-                      <a
-                        href="https://github.com/wrankin1101"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <GitHubSvg />
-                      </a>
-                    </div>
-                    <div class="p-3">
-                      <a
-                        href="https://www.linkedin.com/in/will-rankn"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <LinkedInSvg />
-                      </a>
-                    </div>
-                    <div class="p-3">
-                      <a
-                        href="https://t.me/chillwill749"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <TelegramSvg />
-                      </a>
-                    </div>
-                    <div class="p-3">
-                      <a
-                        href="https://www.upwork.com/freelancers/~0173009a7c75a7ccc8"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <SiUpwork />
-                      </a>
-                    </div>
-                    <div class="p-3">
-                      <a
-                        href="mailto:wrankin1101@gmail.com"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <MailSvg />
-                      </a>
-                    </div>
-                  </div>
+                  <SocialLinks links={socialLinks} />
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -301,7 +260,7 @@ function Home() {
                       rel="noreferrer"
                     >
                       {" "}
-                      <img src={mail} alt="#" />
+                      <img className="contact-icons mr-2" src={mail} alt="#" />
                       wrankin1101@gmail.com
                     </a>
                   </li>
@@ -312,7 +271,7 @@ function Home() {
                       rel="noreferrer"
                     >
                       {" "}
-                      <img src={linkedIn} alt="#" />
+                      <img className="contact-icons" src={linkedIn} alt="#" />
                       linkedin.com/in/will-rankn
                     </a>
                   </li>
@@ -323,7 +282,7 @@ function Home() {
                       rel="noreferrer"
                     >
                       {" "}
-                      <img src={github} alt="#" />
+                      <img className="contact-icons" src={github} alt="#" />
                       github.com/wrankin1101
                     </a>
                   </li>
@@ -436,7 +395,7 @@ function WorkCol(props) {
           {gitHub !== "" && (
             <Link
               to={gitHub}
-              className="github_bubble ml-auto"
+              className="github_bubble ml-auto p-1 p-sm-2"
               target="_blank"
               rel="noreferrer"
             >
@@ -444,10 +403,8 @@ function WorkCol(props) {
             </Link>
           )}
         </div>
-
         {desc}
       </div>
-
       <div class="tech_used d-flex flex-wrap pt-5 align-self-end">
         {techUsed.map((tech, index) => (
           <div key={index} class="tech_bubble">
@@ -458,5 +415,23 @@ function WorkCol(props) {
     </div>
   );
 }
+function SocialLinks({ links }) {
+  return (
+    <div class="socials d-inline-flex p-2 mx-auto">
+      {links.map((link, index) => (
+        <div class="p-sm-3 p-2" key={index}>
+        <a
+          href={link.url}
+          target="_blank"
+          rel="noreferrer"
+          className="social-icon"
+        >
+          {link.icon}
+        </a>
+      </div>
+      ))}
+    </div>
+  );
+};
 
 export default Home;
