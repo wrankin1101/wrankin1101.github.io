@@ -84,7 +84,7 @@ function Home() {
       {/*  banner  */}
       <section id="banner fadeIn">
         <div class="container px-5">
-          <div class="row d-flex">
+          <div class="row d-flex pt-3 pt-sm-5">
             <div class="col-lg-6 align-self-center">
               <h1 class="my-2 white">{TypingEffect("Will Rankin", 50)}</h1>
               <h2 class="my-lg-5 my-4 white">
