@@ -337,8 +337,9 @@ function CommentWriter() {
                   Name:
                   <InfoBubble
                     message={
-                      "You can use the code '#name' in the comments and it will be automatically replaced with this name"
+                      "Use '#name' in your comments and it will be replaced with the name you enter here."
                     }
+                    color="white"
                   />
                 </label>
                 <input
@@ -353,8 +354,9 @@ function CommentWriter() {
               Gender:
               <InfoBubble
                 message={
-                  "Will try to replace gender specific pronouns in the comments. e.g. 'him/her, himself/herself' etc..."
+                  "Will replace gender specific pronouns in your comments, like 'his' and 'her'."
                 }
+                color="white"
               />
               <br />
               <div className="form-check">
@@ -396,8 +398,9 @@ function CommentWriter() {
                 </label>
                 <InfoBubble
                   message={
-                    "Jumbles the sentences if the comments are getting repetitive."
+                    "Jumbles the sentences if your comments are getting repetitive."
                   }
+                  color="white"
                 />
               </div>
               <div className="mt-3 d-flex">

@@ -378,6 +378,8 @@ button {
 }
 
 .bann-img figure {
+  width: 100%;
+  height: 100%;
   margin: 0;
   border-radius: 100%;
   border: 10px solid whitesmoke;
@@ -685,20 +687,39 @@ h3.white {
 }
 
 .copyright a:hover {
-  color: #000;
+  color: #000;  background: rgba(232, 233, 238, 0.25);
 }
 /*---- end footer ----*/
 
 /*---- comment writer ----*/
 .factorGroup,#studentInfoDiv,#generateDiv{
-  background:#e8e9ee;
+  background: rgba(232, 233, 238, 0.15);
+  color: white;
 }
 .input-group-text{
-  background:#CAD6E2;
+  background:rgba(232, 233, 238, 0.05);
+  border:1px solid black;
   height: 100%;
 }
 .infoBubble{
   width:20px;
+
+}
+.commentWriterApp .form-control{
+  background: darkslategray;
+  color: white;
+  border: none;
+  box-shadow: none;
+}
+.factor .form-control{
+  border: 1px solid black;
+}
+.deleteFactor{
+  border: 1px solid black;
+}
+/* Darken all Bootstrap buttons */
+.commentWriterApp .btn-primary, .commentWriterApp .btn-danger {
+  filter: brightness(0.8);
 }
 
 @media (min-width: 768px) {

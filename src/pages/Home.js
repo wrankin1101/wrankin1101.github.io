@@ -241,11 +241,7 @@ function Home() {
       {/*   contact  */}
       <section id="contact" class="contact fadeIn">
         <div class="container px-5">
-          <div class="row spacer"></div>
-          <div class="row">
-            <div class="col-md-6"></div>
-            <div class="col-md-6"></div>
-          </div>
+          <div class="row spacer"/>
           <div class="row">
             <div class="col-lg-6 pb-5">
               <div class="pb-5">
