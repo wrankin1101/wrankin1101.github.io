@@ -326,7 +326,9 @@ function CommentWriter() {
     <div className="commentWriterApp fadeIn">
       <div className="container py-4">
         <div class="d-flex py-4">
-          <h2 class="white">{TypingEffect("Comment Writer", 80)}</h2>
+          <h2 class="white">
+            <TypingEffect text="Comment Writer" speed={80} />
+          </h2>
         </div>
         <div className="row">
           <div className="col-md mb-4">

@@ -157,7 +157,9 @@ function HeaterDemo() {
 
   return (
     <div id="configWrapper" className="container py-4 App fadeIn">
-      <h2 class="white pb-4">{TypingEffect("Product Creator Demo", 80)}</h2>
+      <h2 class="white pb-4">
+        <TypingEffect text="Product Creator Demo" speed={80} />
+      </h2>
       <div className="row">
         <div className="col-12">
           <div id="dimen" className="box" role="tablist">

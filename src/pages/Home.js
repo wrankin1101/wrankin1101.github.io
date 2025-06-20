@@ -86,21 +86,23 @@ function Home() {
         <div class="container px-5">
           <div class="row d-flex pt-3 pt-sm-5">
             <div class="col-lg-6 align-self-center">
-              <h1 class="my-2 white">{TypingEffect("Will Rankin", 50)}</h1>
+              <h1 class="my-2 white">
+                <TypingEffect text="Will Rankin" speed={50} />
+              </h1>
               <h2 class="my-lg-5 my-4 white">
-                  {TypingEffect(
-                    "Full-Stack Developer, Teacher, Explorer",
-                    50,
-                    750
-                  )}
-                </h2>
+                  <TypingEffect
+                    text="Full-Stack Developer, Teacher, Explorer"
+                    speed={50}
+                    commaPause={750}
+                  />
+              </h2>
             </div>
 
             <div class="bann-img-col col-lg-6 col-md-12 ">
               <div class="bann-img my-5 mx-auto fadeIn">
                 <RotatingIcons duration={120} icons={floatingIcons} />
                 <figure>
-                  <img src={headshot} alt="#" />
+                  <img src={headshot} alt="Will Rankin" />
                 </figure>
               </div>
               <div class="row d-flex px-4 my-5">
