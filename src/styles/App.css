@@ -110,7 +110,6 @@ button:focus {
 ul,
 li,
 ol {
-  margin: 0px;
   padding: 0px;
   list-style: none;
 }
@@ -288,13 +287,15 @@ button {
 /*---- end background ----*/
 
 /*---- navigation ----*/
-.navbar-nav .dropdown-menu {
+.dropdown-list {
   background-color: black;
+  z-index: 1000;
   box-shadow: 4px 4px 8px 3px black;
   width: max-content;
   border-left: whitesmoke 2px solid;
-  margin-left: 30px;
+  transition: visibility 0.3s ease-in-out;
 }
+
 .nav-link {
   padding: 0.5rem 25px !important;
   color: #fff;
@@ -304,8 +305,15 @@ button {
   background: none;
 }
 
+.closeButton {
+  color:white;
+  font-size: 20px;
+  transition: color .15s ease-in-out;
+}
+
 .nav-link:focus,
-.nav-link:hover {
+.nav-link:hover,
+.closeButton:hover {
   color: #e70139;
 }
 
@@ -629,6 +637,7 @@ h3.white {
   transform: translate(1.5px, 1.5px);
 }
 .github_bubble svg{
+  margin-left:-1px;
   color: whitesmoke;
   width:30px;
   height: 30px;

@@ -90,7 +90,7 @@
     border-radius: 50%;
 }
 
-.hidden {
+#configWrapper .hidden {
   max-height: 0;
   overflow: hidden;
   display: block;
@@ -98,7 +98,7 @@
   transition: all 1s ease;
 }
 
-.hidden.show {
+#configWrapper .hidden.show {
   max-height: inherit; /* Set this to an appropriate value */
   opacity: 1;
 }

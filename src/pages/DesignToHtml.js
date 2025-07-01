@@ -17,6 +17,9 @@ function DesignToHtml() {
               <h2 class="white pb-4">
                 <TypingEffect text="Design to HTML" speed={80} />
               </h2>
+              <div className="bg-fuchsia-400 font-bold p-4 underline">
+                Tailwind Test
+              </div>
               <img
                 src={designImage}
                 alt="Design to HTML"

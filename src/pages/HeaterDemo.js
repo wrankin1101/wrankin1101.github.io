@@ -163,8 +163,8 @@ function HeaterDemo() {
       <div className="row">
         <div className="col-12">
           <div id="dimen" className="box" role="tablist">
-            <h3 class="white">
-              <DownArrow />
+            <h3 className="white">
+              <DownArrow className="inline" />
               &nbsp;&nbsp; Industrial Heater Configuration
             </h3>
             <div className="boxInfo p-3">
@@ -314,8 +314,8 @@ function HeaterDemo() {
             </div>
           </div>
           <div id="closeLeadsTstat" className="box" role="tablist">
-            <h3 class="white">
-              <DownArrow />
+            <h3 className="white">
+              <DownArrow className="inline" />
               &nbsp;&nbsp; Leads, Closures, and Thermostats
             </h3>
             <div className="boxInfo p-3">
@@ -480,8 +480,8 @@ function HeaterDemo() {
             </div>
           </div>
           <div id="powerVoltage" className="box" role="tablist">
-            <h3 class="white">
-              <DownArrow />
+            <h3 className="white">
+              <DownArrow className="inline" />
               &nbsp;&nbsp; Power, Voltage, and Submit
             </h3>
             <div className="boxInfo p-3">

@@ -12,7 +12,7 @@ export const scrollToTop = () => {
 export function InfoBubble({ message, color='black' }) {
     return (
       <OverlayTrigger overlay={<Tooltip>{message}</Tooltip>}>
-        <Info color={color} class="infoBubble mx-1"/>
+        <Info color={color} className="infoBubble mx-1 inline"/>
       </OverlayTrigger>
     );
   }

@@ -47,11 +47,11 @@ function Home() {
     <SiJavascript title="Javascript" />,
   ];
   const socialLinks = [
-    { icon: <GitHubSvg />, url: "https://github.com/wrankin1101"},
-    { icon: <LinkedInSvg />, url: "https://www.linkedin.com/in/will-rankn" },
-    { icon: <TelegramSvg />, url: "https://t.me/chillwill749" },
-    { icon: <SiUpwork />, url: "https://www.upwork.com/freelancers/~0173009a7c75a7ccc8" },
-    { icon: <MailSvg />, url: "mailto:mailto:wrankin1101@gmail.com" },
+    { icon: <GitHubSvg className="inline" />, url: "https://github.com/wrankin1101" },
+    { icon: <LinkedInSvg className="inline" />, url: "https://www.linkedin.com/in/will-rankn" },
+    { icon: <TelegramSvg className="inline" />, url: "https://t.me/chillwill749" },
+    { icon: <SiUpwork className="inline" />, url: "https://www.upwork.com/freelancers/~0173009a7c75a7ccc8" },
+    { icon: <MailSvg className="inline" />, url: "mailto:mailto:wrankin1101@gmail.com" },
   ];
 
   const sendEmail = () => {
@@ -112,7 +112,7 @@ function Home() {
                     href="https://drive.google.com/file/d/155HY4my4mZl1IAD_-V7XuTdNIjqKEVki/view?usp=sharing"
                     rel="noreferrer"
                   >
-                    <PdfSvg />
+                    <PdfSvg className="inline"/>
                     &nbsp;&nbsp;Resume
                   </a>
                 </div>
@@ -250,7 +250,7 @@ function Home() {
                 <h3 class="white">Let’s Talk </h3>
               </div>
               <div class="contact-links">
-                <ul>
+                <ul className="m-0">
                   <li>
                     <a
                       href="mailto:wrankin1101@gmail.com"
@@ -258,7 +258,7 @@ function Home() {
                       rel="noreferrer"
                     >
                       {" "}
-                      <img className="contact-icons mr-2" src={mail} alt="#" />
+                      <img className="contact-icons mr-2 inline" src={mail} alt="#" />
                       wrankin1101@gmail.com
                     </a>
                   </li>
@@ -269,7 +269,7 @@ function Home() {
                       rel="noreferrer"
                     >
                       {" "}
-                      <img className="contact-icons" src={linkedIn} alt="#" />
+                      <img className="contact-icons inline" src={linkedIn} alt="#" />
                       linkedin.com/in/will-rankn
                     </a>
                   </li>
@@ -280,7 +280,7 @@ function Home() {
                       rel="noreferrer"
                     >
                       {" "}
-                      <img className="contact-icons" src={github} alt="#" />
+                      <img className="contact-icons inline" src={github} alt="#" />
                       github.com/wrankin1101
                     </a>
                   </li>
