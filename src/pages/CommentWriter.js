@@ -416,7 +416,7 @@ function CommentWriter() {
                 </div>
                 <div className="px-2">
                   <div>
-                    <label for="files" className="btn btn-outline-secondary">
+                    <label htmlFor="files" className="btn btn-outline-secondary">
                       Load Settings
                     </label>
                     <input
