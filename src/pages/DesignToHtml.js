@@ -29,7 +29,7 @@ function DesignToHtml() {
                   responsive website is <br className="d-sm-none d-block" />
                   <span className="text-[#e70139]">what I do best.</span>
                 </div>
-                <div className="mb-2 !text-lg">
+                <div className="mb-2 !text-lg font-bold">
                   <span>Bring your vision to life!</span>
                 </div>
               </p>
