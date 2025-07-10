@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import TypingEffect from "../components/TypingEffect";
 import { scrollToTop } from "../components/Utils";
+import "../styles/design.css";
 
-//work images
+
+//images
 import designImage from "../assets/images/design_to_site/design.png";
 import logo from "../assets/images/design_to_site/sample-logo.png";
 
