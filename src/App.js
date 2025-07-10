@@ -19,7 +19,7 @@ const App = () => {
         <Route path="/index" element={<Home />} />
         <Route path="/commentwriter" element={<CommentWriter />} />
         <Route path="/heaterdemo" element={<HeaterDemo />} />
-        <Route path="/designtohtml" element={<DesignToHtml />} />
+        <Route path="/design" element={<DesignToHtml />} />
       </Routes>
       <ScrollToAnchor />
     </Layout>

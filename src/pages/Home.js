@@ -11,6 +11,7 @@ import commentWriter from "../assets/images/recent_work/commentwriter_color.png"
 import funway from "../assets/images/recent_work/funway_color.png";
 import funwayCity from "../assets/images/recent_work/funwaycity_color.png";
 import oem from "../assets/images/recent_work/oemheaters_color.png";
+import designToSite from "../assets/images/design_to_site/design.png";
 
 //icons
 import call from "../assets/icons/call.png";
@@ -155,7 +156,7 @@ function Home() {
               gitHub="https://github.com/wrankin1101/comment-writer"
               techUsed={["React.js", "Bootstrap", "jQuery", "HTML/CSS"]}
               desc={
-                <p>
+                <p className="home-text">
                   Created an intuitive comment writing application to increase
                   quarterly reporting speed for teachers by up to 50%
                 </p>
@@ -175,12 +176,11 @@ function Home() {
               ]}
               desc={
                 <>
-                  <p class="mb-2">
+                  <p class="mb-2 home-text">
                     Created web apps that allowed users to create custom
-                    products, which increased sales and created leads.
+                    products, which increased sales and created leads, redone in React.js as a learning exercise.
                   </p>
-                  <p class="mb-2">Recently redone in React.js as a learning exercise.</p>
-                  <p>
+                  <p className="home-text">
                     You can view original jQuery apps{" "}
                     <a
                       href="https://www.oemheaters.com/configurators/sr/config.aspx"
@@ -201,13 +201,26 @@ function Home() {
           </div>
           <div class="row">
             <WorkCol
+              title="Design to Website"
+              img={designToSite}
+              link="/design"
+              gitHub="https://github.com/wrankin1101/figma-to-html-test"
+              techUsed={["React.js", "Tailwind CSS", "HTML/CSS"]}
+              desc={
+                <p class="home-text">
+                  Created a website from a design mockup, showcasing skills in
+                  converting designs to functional websites. 
+                </p>
+              }
+            />
+            <WorkCol
               title="English Academy Website"
               img={funway}
               link="https://funway.co.kr"
               isExternalLink={true}
               techUsed={["CreatorLink", "HTML/CSS"]}
               desc={
-                <p>
+                <p class="home-text">
                   Worked with business owner to design and create a website
                   using the full-service builder{" "}
                   <a
@@ -223,19 +236,20 @@ function Home() {
                 </p>
               }
             />
-            <WorkCol
+            {/*<WorkCol
               title="English Academy Student Dashboard"
               img={funwayCity}
               link=""
               techUsed={["Wix", "Wix Velo", "Javascript", "HTML/CSS"]}
               desc={
-                <p>
+                <p class="home-text">
                   Utilized Wix and Wix Velo to create a dashboard for students
                   and parents to track progress in an intuitive responsive
                   design.
                 </p>
               }
-            />
+            />*/}
+            
           </div>
         </div>
       </section>

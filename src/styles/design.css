@@ -1,0 +1,29 @@
+/* This file contains the styles for Design to Html page */
+
+
+.btn-gradient {
+  /*@apply text-[#6a5142] bg-gradient-to-b from-[#f9f7f3] to-[#e0d8c8]*/
+  color: #6a5142;
+  background-image: linear-gradient(to bottom, #f9f7f3, #e0d8c8);
+}
+.numbers-section{
+    background-image: linear-gradient(158deg, rgb(168, 138, 103) 35%, rgb(106, 81, 66) 83%);
+}
+.hoverable:hover {
+  transform: scale(1.02);
+}
+.hoverable {
+  transition: all 0.3s ease-in-out;
+}
+
+.DesignToHtml .designSite {
+  display: none;
+}
+
+.DesignToHtml.show-site .designImage {
+  display: none;
+}
+
+.DesignToHtml.show-site .designSite {
+  display: block;
+}

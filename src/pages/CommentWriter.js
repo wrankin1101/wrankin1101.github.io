@@ -452,7 +452,7 @@ function CommentWriter() {
               />
             ))}
           </div>
-          <div className="col-md">
+          <div className="col-md sticky-parent">
             <div id="generateDiv" className="rounded p-3 sticky-column">
               <div class="d-flex">
                 <h2 class="flex-grow-1">Comment Output</h2>
